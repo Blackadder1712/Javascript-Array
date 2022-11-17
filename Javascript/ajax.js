@@ -1,27 +1,35 @@
-//call to API
+let get = document.querySelector('#get-img');
 
 let images = document.querySelector('.images');
 
-//create request object
-
 let request = new XMLHttpRequest();
 
-//create request
+//create request object
 
-request.open('GET','https://picsum.photos/200');
 
-//send request
+           //create request
 
-request.send();
+        request.open('GET','https://picsum.photos/200');
 
-request.addEventListener('load', function()
-{
-    let [data] = request.responseText;
-    console.log(data);
-    
-    const html = `   <div class="images">
-    <img class="array_image" src="${data.location}  
-             
-     </div>`;
-   
-})
+
+        //send request
+
+        request.send();
+
+        request.addEventListener('load', function()
+        {
+          let[data] = JSON.parse(request.responseText);
+          console.log(data);
+
+          const html = document.querySelector(".array_image");
+         
+            
+            
+        
+        })
+
+      
+
+
+
+
