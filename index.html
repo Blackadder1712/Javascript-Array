@@ -3,6 +3,7 @@
         <head>
           <script src="https://kit.fontawesome.com/271f4647db.js" crossorigin="anonymous"></script>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+          <link href="css/style.css" rel="stylesheet">
        
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width,initial-scale=1.0" >
@@ -19,16 +20,20 @@
         <body>
 
    
-         <input type="email" id="search" placeholder="Email Address">
-         <button onclick="SearchPhotos()">Submit</button>
+        
+         <button onclick="SearchPhotos()">New Image</button>
 
          <div class="random-img">
 
-          <img class="image" src="">
+          <img class="image" src="https://picsum.photos/id/135/2560/1920">
 
          </div>
   
-         
+        <button onclick=" SelectPhoto()">Submit</button>
+
+        <div class ="select-img">
+          <img class="selected-img">
+        </div>
         
 
 

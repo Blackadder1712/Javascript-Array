@@ -1,4 +1,23 @@
+
+           
+        
+        
+        
+        
+
+        
+
+       
+        
+
+        
+       
+        
+
+
 //call to API
+
+
 
 function SearchPhotos()
 {
@@ -10,7 +29,7 @@ function SearchPhotos()
 
     //create request
 
-    request.open('GET', 'https://picsum.photos/v2/list')
+    request.open('GET', 'https://picsum.photos/v2/list?page=2&limit=100')
 
     //send request
 
@@ -19,22 +38,65 @@ function SearchPhotos()
     request.addEventListener("load", function()
     {
         let data = JSON.parse(request.responseText);
-        console.log(data);
-        //loop through array
-        for (i = 0; i < 30; i++)
+     
+
+       
+ 
+        //grab random photo from array
+
+         
+       
+            const htmls = Math.floor(Math.random() * data.length) + 0;
+ 
+           
+            const html = `  <img class="image" src="${data[htmls].download_url}">`;
+
+            console.log(htmls)
+
+             
+        if(data.length >= 1)
         {
-            const html = `  <img class="image" src="${data[i].download_url}">`
-            
-        image.insertAdjacentHTML("beforeend", html);
-            
+
+            image.removeChild(image.lastElementChild)
         }
-        //convert into javascript
-    
+
+
+            
+
+
+
+            
+
       
-  
+            
+
+            
+            
+        image.insertAdjacentHTML("beforeend", html)
+
+       
         
-   
+      
+        
+        
+      
 
+        
+           
+        
+        
+        
+        
 
-    })
+        
+
+       
+        
+
+        
+        
+        
+        //convert into javascript
+    });
+
 }
