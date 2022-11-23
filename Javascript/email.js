@@ -3,7 +3,12 @@
 let emailInput = document.getElementById('email');
 let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
+let emails =[];
 
+
+
+
+    
    $("#send").click(function()
    {
             //check if email field contains @ character
@@ -12,11 +17,24 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
             {
                 $("#email").css({"border": "3px solid #7FFF94"})
                 {
+                 
+                
+                  
                     var x = document.getElementById("email").value;
-                    let emails = [];
                     emails.unshift(x);
+                   
+                    
+                  
 
-                    console.log(emails)
+
+                    console.log(emails);
+                
+                  
+                 
+                
+                  
+
+            
 
                  
                     
@@ -31,11 +49,26 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
               
                     document.getElementById("text").innerHTML = x;
 
-                    return;
-
+                    
                  
 
                 }
+
+              
+             
+                
+              
+                
+
+          
+             
+
+                
+         
+
+                
+              
+               
 
        
                
@@ -57,6 +90,8 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
 
 
             });
+
+        
           
 
   
