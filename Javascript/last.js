@@ -1,23 +1,6 @@
-
-           
-        
-        
-        
-        
-
-        
-
-       
-        
-
-        
-       
-        
-
-
 //call to API
 
-
+let imageList = [];  
 
 function SearchPhotos()
 {
@@ -26,6 +9,8 @@ function SearchPhotos()
     //create object
 
     let request = new XMLHttpRequest();
+ 
+
 
     //create request
 
@@ -35,23 +20,37 @@ function SearchPhotos()
 
     request.send();
 
+   
+ 
     request.addEventListener("load", function()
     {
         let data = JSON.parse(request.responseText);
+
      
 
        
  
         //grab random photo from array
-
-         
+             
+                  
        
             const htmls = Math.floor(Math.random() * data.length) + 0;
  
            
-            const html = `  <img class="image" src="${data[htmls].download_url}">`;
+            let html = `  <img class="image" src="${data[htmls].download_url}">`;
 
-            console.log(htmls)
+             
+        
+            
+            
+
+
+            imageList.unshift(html);
+             
+             
+
+
+            console.log(imageList)
 
              
         if(data.length >= 1)
@@ -98,5 +97,10 @@ function SearchPhotos()
         
         //convert into javascript
     });
+
+ 
+          
+
+  
 
 }

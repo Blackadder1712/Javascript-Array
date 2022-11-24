@@ -8,6 +8,7 @@ let emails =[];
 
 
 
+
     
    $("#send").click(function()
    {
@@ -86,14 +87,52 @@ let emails =[];
 
             }
 
+
+
+
           
 
 
-            });
+    })
+    
+    
+    
+    function SelectImage()
+    {
+      let imagepicked = imageList[0];
+      let emailpicked = [emails[0]];
+      
+     
+
+      if (emails.length >= 1)
+      {
+     
+
+        emailpicked.push(imagepicked);
+
+
+        console.log(emailpicked);
+
+
 
         
-          
 
-  
+    
+     
+
+      
+
+        
+
+      }
+
+    }
+    
+
+    
+
+            
+
+        
 
               
