@@ -50,7 +50,6 @@ function SearchPhotos()
              
 
 
-            console.log(imageList)
 
              
         if(data.length >= 1)
