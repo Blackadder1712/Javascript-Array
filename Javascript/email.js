@@ -101,7 +101,7 @@ let emails =[];
     {
       let imagepicked = imageList[0];
       let emailpicked = [emails[0]];
-      
+      let chosen = document.querySelector(".selected-image");
      
 
       if (emails.length >= 1)
@@ -114,9 +114,42 @@ let emails =[];
         console.log(emailpicked);
 
 
+       
+ 
+           
+ 
 
+         let imageSelected = `<div class="selected-image">${emailpicked[1]}</div>`
+
+               
+            
+         chosen.insertAdjacentHTML("beforeend", imageSelected)
+
+
+
+             
         
+            
+            
 
+
+       
+
+
+            
+
+
+
+            
+
+      
+            
+
+      
+
+       
+        
+      
     
      
 
