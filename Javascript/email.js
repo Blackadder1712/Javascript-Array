@@ -49,6 +49,8 @@ let emails =[];
 
               
                     document.getElementById("text").innerHTML = x;
+                    
+                    document.getElementById("texti").innerHTML = x;
 
                     
                  
