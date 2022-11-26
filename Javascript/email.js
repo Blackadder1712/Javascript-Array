@@ -9,6 +9,7 @@ let emails =[];
 
 
 
+
     
    $("#send").click(function()
    {
@@ -22,8 +23,13 @@ let emails =[];
                 
                   
                     var x = document.getElementById("email").value;
-                    emails.unshift(x);
                    
+                 
+                  
+                    
+
+                    emails.unshift(x);
+
                     
                   
 
@@ -45,14 +51,10 @@ let emails =[];
 
                   
                     
-                    
 
               
                     document.getElementById("text").innerHTML = x;
-                    
-                    document.getElementById("texti").innerHTML = x;
-
-                    
+                  
                  
 
                 }
@@ -105,6 +107,8 @@ let emails =[];
       let emailpicked = [emails[0]];
       let chosen = document.querySelector(".selected-image");
      
+    
+     
 
       if (emails.length >= 1)
       {
@@ -121,11 +125,13 @@ let emails =[];
            
  
 
-         let imageSelected = `<div class="selected-image">${emailpicked[1]}</div>`
+         let imageSelected = `<div class="selected-image">${emailpicked}</div>`
 
                
             
-         chosen.insertAdjacentHTML("beforeend", imageSelected)
+         chosen.insertAdjacentHTML("beforeend", imageSelected);
+
+
 
 
 
@@ -159,6 +165,10 @@ let emails =[];
 
         
 
+      }
+      for( let i = 0; i < emails.length; i ++ )
+      {
+      let array = [emailpicked[i][imageList[i]]]
       }
 
     }

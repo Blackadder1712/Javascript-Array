@@ -5,6 +5,7 @@ let imageList = [];
 function SearchPhotos()
 {
     let image = document.querySelector(".random-img");
+    let box = document.querySelector(".border");
 
     //create object
 
