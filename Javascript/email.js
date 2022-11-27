@@ -3,8 +3,8 @@
 let emailInput = document.getElementById('email');
 let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-let emails =[];
 
+  emailpicked =[]
 
 
 
@@ -20,10 +20,11 @@ let emails =[];
                 $("#email").css({"border": "3px solid #7FFF94"})
                 {
                  
-                
+                    emails =[];
                   
                     var x = document.getElementById("email").value;
                    
+                 
                  
                   
                     
@@ -31,10 +32,10 @@ let emails =[];
                     emails.unshift(x);
 
                     
-                  
+                    emailpicked.unshift(emails)
 
 
-                    console.log(emails);
+                    console.log(emailpicked);
                 
                   
                  
@@ -98,18 +99,18 @@ let emails =[];
 
 
     })
+          
 
+    emailpicked = [];
     
     function SelectImage()
     {
   
       let chosen = document.querySelector(".selected-image");
-           
-     imagepicked = imageList[0];
-     emailpicked = [emails[0]];
-    
+ 
+      imagepicked = imageList[0];
      
-
+      emailpicked.unshift(emails[0]);
  
      
 
