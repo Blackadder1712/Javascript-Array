@@ -98,20 +98,19 @@ let emails =[];
 
 
     })
-    
-    
+
     
     function SelectImage()
     {
-      let imagepicked = imageList[0];
-      let emailpicked = [emails[0]];
+  
       let chosen = document.querySelector(".selected-image");
-     
+           
+     imagepicked = imageList[0];
+     emailpicked = [emails[0]];
     
      
 
-      if (emails.length >= 1)
-      {
+ 
      
 
         emailpicked.push(imagepicked);
@@ -165,11 +164,8 @@ let emails =[];
 
         
 
-      }
-      for( let i = 0; i < emails.length; i ++ )
-      {
-      let array = [emailpicked[i][imageList[i]]]
-      }
+      
+     
 
     }
     
