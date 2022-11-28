@@ -1,5 +1,6 @@
 let imageList = [];
 
+// when you click the "new image " button
 function SearchPhotos()
 {
     let image = document.querySelector(".random-img");
@@ -42,14 +43,14 @@ function SearchPhotos()
              
         
             
-            
+            //place it into imageList array
 
 
             imageList.unshift(html);
              
              
 
-
+            // no more than one image at a time
 
              
         if(data.length >= 1)
@@ -66,7 +67,7 @@ function SearchPhotos()
             
 
       
-            
+            //display on screen
 
             
             
@@ -131,19 +132,22 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
 
 
                   emailList.unshift(emails);
+
+                              
+               
+
+
+
               
+                
+                  
                   
                   
              
                    
 
                     
-                
-                  if (emails[0] == emails[1])
-                  {
-                      alert("Email already stored")
-                  }
-                   
+               
                 
 
 
@@ -177,7 +181,6 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
               
                     document.getElementById("text").innerHTML = x;
                     
-                    document.getElementById("text-2").innerHTML = x;
 
 
                    
@@ -226,10 +229,13 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
 
 
     })
-    
-    
+
+     
+
+    //save image button
     function SelectImage()
     {
+      //put displayed photo into email 1st in array
       let chosen = document.querySelector(".selected-image");
     
         
@@ -237,30 +243,62 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
        let photoSelected = imageList[0]
 
        let emailSelected = emailList[0]
-
-       let result = photoSelected + document.getElementById("email").value
+     
+      
+      
+       let result = document.getElementById("email").value +"<br>"+ "<hr>"+ "<br>" + photoSelected   ;
       
 
        emailSelected.unshift(photoSelected);
        console.log(emailSelected)
 
+     
        
+
+     
+        
+      
+
+
        
+        //checking if duplicate email
         if (emails[0] !== emails[1])
         {
+      
           
-          let imageSelected = `<div class="selected-image">${result}}</div>`
+          let imageSelected = `<div class="selected-image">${result}</div>`
+
+       
+           
+
+
               
           chosen.insertAdjacentHTML("beforeend", imageSelected);
+   
+          
+        
+          
+        
+
+
+
+
+          
+      
+           
+
         }
+
+        
         else
         {
-          let imageSelected = `<div class="selected-image">${photoSelected}}</div>`
+          let imageSelected = `<div class="selected-image">${photoSelected}</div>`
           chosen.insertAdjacentHTML("beforeend", imageSelected);
+          
           
         }
 
-       
+
            
          
      

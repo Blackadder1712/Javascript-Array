@@ -2,6 +2,83 @@
   box-sizing: border-box;
 }
 
+input[type=text]#email, textarea#email {
+  width: calc(100% - 50px);
+  border: 30px solid aqua;
+  border-left: 5px solid #000;
+  border-right: 5px solid #000;
+  border-bottom: 15px solid #FF013C;
+  -webkit-clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px) calc(100% - 10px), calc(80% - 15px) calc(100% - 0px), 10px calc(100% - 0px), 0% calc(100% - 10px));
+          clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px) calc(100% - 10px), calc(80% - 15px) calc(100% - 0px), 10px calc(100% - 0px), 0% calc(100% - 10px));
+  padding: 12px;
+}
+
+#email {
+  margin-bottom: 20px;
+}
+
+.new, .new::after {
+  width: 200px;
+  height: 46px;
+  font-size: 20px;
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  line-height: 44px;
+  box-shadow: 6px 0px 0px #00E6F6;
+  outline: transparent;
+  position: relative;
+  margin-top: 20px;
+}
+
+#send, #send::after {
+  width: 400px;
+  height: 46px;
+  font-size: 20px;
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  line-height: 44px;
+  box-shadow: 6px 0px 0px #00E6F6;
+  outline: transparent;
+  position: relative;
+  margin-top: 20px;
+}
+
+#save, #save::after {
+  width: 300px;
+  height: 88px;
+  font-size: 20px;
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  line-height: 14px;
+  box-shadow: 6px 0px 0px #00E6F6;
+  outline: transparent;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#select {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.selected-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+hr {
+  width: 100%;
+}
+
 .border {
   margin-bottom: 110px;
 }
@@ -122,4 +199,11 @@ main {
   border-color: #000;
   border-width: 5px;
   border-style: solid;
+}
+
+hr {
+  height: 20px;
+  background-color: red;
+  -webkit-clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+          clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
 }/*# sourceMappingURL=style.css.map */
