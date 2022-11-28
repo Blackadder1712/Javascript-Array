@@ -125,12 +125,36 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
                 
  
                     
-                  var x = document.getElementById("email").value;
+                   x = document.getElementById("email").value;
                   emails = [x];
                   console.log(emailList);
 
 
-                  emailList.unshift(emails)
+                  emailList.unshift(emails);
+              
+                  
+                  
+             
+                   
+
+                    
+                
+                  if (emails[0] == emails[1])
+                  {
+                      alert("Email already stored")
+                  }
+                   
+                
+
+
+
+
+
+ 
+            
+ 
+               
+                  
 
 
                    
@@ -152,16 +176,12 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
 
               
                     document.getElementById("text").innerHTML = x;
+                    
+                    document.getElementById("text-2").innerHTML = x;
+
 
                    
-                 if ( email[0].value === email[1].value)
-                 {
-                  alert("Email already stored");
-                  
-           
-
-              
-                 }
+          
 
                 }
 
@@ -211,26 +231,47 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
     function SelectImage()
     {
       let chosen = document.querySelector(".selected-image");
-      
-       
+    
         
            
        let photoSelected = imageList[0]
 
        let emailSelected = emailList[0]
 
+       let result = photoSelected + document.getElementById("email").value
+      
 
        emailSelected.unshift(photoSelected);
        console.log(emailSelected)
-           
- 
 
-         let imageSelected = `<div class="selected-image">${emailSelected}</div>`
+       
+       
+        if (emails[0] !== emails[1])
+        {
+          
+          let imageSelected = `<div class="selected-image">${result}}</div>`
+              
+          chosen.insertAdjacentHTML("beforeend", imageSelected);
+        }
+        else
+        {
+          let imageSelected = `<div class="selected-image">${photoSelected}}</div>`
+          chosen.insertAdjacentHTML("beforeend", imageSelected);
+          
+        }
+
+       
+           
+         
+     
+       
+
+       
 
                
-            
-         chosen.insertAdjacentHTML("beforeend", imageSelected);
+        
 
+        
 
 
 
@@ -266,7 +307,7 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
         
 
       
-     
+       
 
     }
     
