@@ -262,7 +262,7 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
 
        
         //checking if duplicate email
-        if (emails[0] !== emails[1])
+        if (emails[0].length !== emails[1].length)
         {
       
           
