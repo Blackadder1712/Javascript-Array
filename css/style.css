@@ -7,7 +7,7 @@ input[type=text]#email, textarea #email {
   border: 30px solid aqua;
   border-left: 5px solid #000;
   border-right: 5px solid #000;
-  border-bottom: 15px solid #FF013C;
+  border-bottom: 15px solid #f9f002;
   -webkit-clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px) calc(100% - 10px), calc(80% - 15px) calc(100% - 0px), 10px calc(100% - 0px), 0% calc(100% - 10px));
           clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px) calc(100% - 10px), calc(80% - 15px) calc(100% - 0px), 10px calc(100% - 0px), 0% calc(100% - 10px));
   padding: 12px;
@@ -22,9 +22,9 @@ input[type=text]#email, textarea #email {
   width: 200px;
   height: 46px;
   font-size: 20px;
-  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  background: linear-gradient(45deg, transparent 5%, #f9f002 5%);
   border: 0;
-  color: #fff;
+  color: #000;
   letter-spacing: 3px;
   line-height: 44px;
   box-shadow: 6px 0px 0px #00E6F6;
@@ -38,12 +38,12 @@ input[type=text]#email, textarea #email {
   width: 300px;
   height: 46px;
   font-size: 20px;
-  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  background: linear-gradient(45deg, transparent 5%, #00E6F6 5%);
   border: 0;
-  color: #fff;
+  color: #000;
   letter-spacing: 3px;
   line-height: 44px;
-  box-shadow: 6px 0px 0px #00E6F6;
+  box-shadow: 6px 0px 0px #f9f002;
   outline: transparent;
   position: relative;
   margin-top: 20px;
@@ -54,9 +54,9 @@ input[type=text]#email, textarea #email {
   width: 300px;
   height: 88px;
   font-size: 15px;
-  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  background: linear-gradient(45deg, transparent 5%, #f9f002 5%);
   border: 0;
-  color: #fff;
+  color: #000;
   letter-spacing: 4px;
   line-height: 14px;
   box-shadow: 6px 0px 0px #00E6F6;
