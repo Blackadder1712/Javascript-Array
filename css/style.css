@@ -88,6 +88,10 @@ input[type=text]#email, textarea #email {
   gap: 20px;
 }
 
+.selected-image img {
+  margin-top: 40px;
+}
+
 hr {
   width: 100%;
 }
@@ -219,4 +223,82 @@ hr {
   background-color: red;
   -webkit-clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
           clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    height: 600px;
+  }
+  #text {
+    display: flex;
+    align-self: left;
+  }
+  .selected-image img {
+    margin-top: 40px;
+  }
+  .image {
+    width: 130px;
+    height: 130px;
+  }
+  .selected-image {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    overflow-y: scroll;
+  }
+  .border {
+    display: flex;
+    align-items: center;
+  }
+  .choice {
+    overflow-y: scroll;
+  }
+}
+@media screen and (min-width: 992px) {
+  main {
+    display: flex;
+    flex-direction: row;
+  }
+  .image {
+    width: 90px;
+    height: 90px;
+  }
+  .enter {
+    width: 50%;
+  }
+  .enter .title {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .enter .margin, .enter .new, .enter #send, .enter #save {
+    margin-top: 10px;
+  }
+  .enter .text {
+    font-size: 10px;
+  }
+  .enter .buttons {
+    display: flex;
+    flex-direction: row;
+  }
+  .enter .choice {
+    position: relative;
+    right: 250px;
+    width: 600px;
+    margin-left: 0px;
+    padding-bottom: 10px;
+  }
+  .enter .image {
+    height: 150px;
+    width: 150px;
+  }
+  .enter #send {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 992px) and (min-width: 992px) {
+  .border {
+    margin-left: 40px;
+  }
 }/*# sourceMappingURL=style.css.map */

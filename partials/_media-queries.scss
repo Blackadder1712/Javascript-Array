@@ -1,0 +1,130 @@
+@media screen and (min-width: 768px)
+{   
+    main
+    {
+        height:600px;
+    }
+
+    #text
+    {
+        display: flex;
+        align-self: left;
+    }
+
+.selected-image img
+    {
+        margin-top:40px;
+    }
+
+  
+
+    .image
+    {
+    width:130px;
+    height:130px;
+    }
+ 
+    
+    .selected-image 
+   {
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap;
+      align-content: center;
+      overflow-y: scroll;
+     
+   
+   }
+
+    .border
+    {display:flex;
+    align-items: center;
+    
+    }
+
+    .choice
+    {
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (min-width: 992px)
+{
+    main
+    {
+       display: flex;
+       flex-direction: row;
+     
+
+       
+     
+    }
+
+    .image
+    {
+        width:90px;
+        height:90px;
+    }
+
+    .enter
+    {
+        width:50%;;
+
+    .title
+    {
+        width:100%;
+        padding-left:10px;
+        padding-right: 10px;
+
+    }
+    .margin, .new, #send, #save
+    {
+        margin-top:10px;
+    }
+
+    .text
+    {
+        font-size:10px;
+    }
+     
+    .buttons
+    {
+        display:flex;
+        flex-direction: row;
+    }
+    
+    .choice
+    {
+        position:relative;
+        right:250px; 
+        width:600px;
+       
+        margin-left:0px;
+        padding-bottom:10px;
+        
+
+        
+    }
+
+    .image
+    {
+        height:150px;
+        width:150px;
+      
+    }
+    
+    .choice
+    {
+
+    }
+    #send
+    {font-size:10px;}
+    
+   
+    }
+    @media screen and (min-width: 992px)
+    {
+        .border
+        {margin-left:40px;}
+    }
+}
