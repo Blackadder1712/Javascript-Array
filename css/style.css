@@ -50,6 +50,15 @@ input[type=text]#email, textarea #email {
   font-family: "Michroma";
 }
 
+.text-box {
+  word-wrap: break-word;
+}
+
+.selected-image {
+  word-wrap: break-word;
+  font-size: 13px;
+}
+
 #save, #save::after {
   width: 300px;
   height: 88px;
