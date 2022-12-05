@@ -262,7 +262,7 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
 
        
         //checking if duplicate email
-        if (emails[0].length !== emails[1].length)
+        if (emails[0] !== emails[1])
         {
       
           
@@ -294,6 +294,12 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
         {
           let imageSelected = `<div class="selected-image">${photoSelected}</div>`
           chosen.insertAdjacentHTML("beforeend", imageSelected);
+
+          alert("This Email is already stored");
+
+          emails.splice(fromIndex, 0);
+          emails.splice(toIndex,1, x)
+
           
           
         }

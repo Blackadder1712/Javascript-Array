@@ -245,14 +245,14 @@ hr {
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
-    overflow-y: scroll;
+    overflow-y: hidden;
   }
   .border {
     display: flex;
     align-items: center;
   }
   .choice {
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 }
 @media screen and (min-width: 992px) {
@@ -292,6 +292,7 @@ hr {
   .enter .image {
     height: 150px;
     width: 150px;
+    overflow-y: hidden;
   }
   .enter #send {
     font-size: 10px;
