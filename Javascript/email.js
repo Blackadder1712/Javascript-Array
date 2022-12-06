@@ -197,11 +197,19 @@ $("#send").click(function()
         for (let i = 1; i <= emailList.length; i++)
         { 
         
-         if(emailList[0][0] === emailList[i][0])
+         if(emailList[0][0]=== emailList[i][0])
          {
 
              alert("Email already logged");
-            emailList[0][0].removeChild(lastElementChild);
+         
+            
+             emailList[0].pop()
+             emailList[i].pop()
+
+             console.log("popped")
+            
+
+         
           
            
           
@@ -308,6 +316,31 @@ $("#send").click(function()
 
     }
 
+    for (let i = 1; i <= emails.length; i++)
+    { 
+    
+     if(emails[0]=== emails[i][0])
+     {
+
+   
+     
+           
+      emails[0].shift()
+     
+
+      console.log("popped")
+     
+      
+        
+
+     
+      
+       
+      
+    
+         
+     }
+
     
 
 
@@ -366,5 +399,5 @@ $("#send").click(function()
 
 
 
-
+    }
 
