@@ -183,20 +183,26 @@ $("#send").click(function()
 })
 
 
-function SelectImage() 
-{
+function SelectImage() {
+  //put displayed photo into email 1st in array
+  emailList.unshift(imageList[0]);
+  console.log(emailList)
+
+  //display on screen
   let chosen = document.querySelector(".selected-image");
-  
 
-
-   photoSelected = imageList[0];
-
+  photoSelected = imageList[0]
 
   let imageSelected = `<div class="selected-image">${photoSelected}</div>`
   chosen.insertAdjacentHTML("beforeend", imageSelected);
 
+  console.log(emailList[0])
+
+  
+  
 
 
+  
   
 
    
