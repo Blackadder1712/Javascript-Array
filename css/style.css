@@ -89,7 +89,7 @@ input[type=text]#email, textarea #email {
 }
 
 .selected-image img {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 hr {
@@ -301,5 +301,9 @@ hr {
 @media screen and (min-width: 992px) and (min-width: 992px) {
   .border {
     margin-left: 40px;
+  }
+  .image {
+    width: 90px;
+    height: 90px;
   }
 }/*# sourceMappingURL=style.css.map */

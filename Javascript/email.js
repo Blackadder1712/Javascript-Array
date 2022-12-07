@@ -110,7 +110,6 @@ let emailInput = document.getElementById('email');
 let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 
-emailList = []
 
 
 
@@ -261,9 +260,7 @@ $("#send").click(function()
     let photoSelected = imageList[0]
 
     let emailSelected = emailList[0]
-
-
-
+    
     let result = document.getElementById("email").value + "<br>" + "<hr>" + "<br>" + photoSelected;
 
 
