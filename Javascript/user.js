@@ -135,6 +135,8 @@ $("#send").click(function()
               {
                
                  alert("Email already stored")
+
+            
                  //move duplicate email to top of duplicate array 
 
                  duplicate.unshift(emailList[0])
@@ -206,6 +208,11 @@ function SelectImage() {
 
   console.log(emailList[0])
 
+
+ for( i = 1; i < emailList.length; i ++)
+    duplicated = emailList.find(Element => emailList[i] === emailList[0])
+  
+ console.log(duplicated.value)
   
 
   
