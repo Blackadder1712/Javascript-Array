@@ -123,6 +123,7 @@ $("#send").click(function()
          {
              $("#email").css({"border": "3px solid #7FFF94"})
              {
+
               //put email into a variable :
               x = document.getElementById("email").value;
               // put x at top of emailList:
@@ -185,7 +186,14 @@ $("#send").click(function()
 
 function SelectImage() {
   //put displayed photo into email 1st in array
-  emailList.unshift(imageList[0]);
+  emailList.unshift(email)
+  email = []
+
+  email.unshift(x)
+
+  email.push(imageList[0])
+
+
   console.log(emailList)
 
   //display on screen
@@ -197,6 +205,8 @@ function SelectImage() {
   chosen.insertAdjacentHTML("beforeend", imageSelected);
 
   console.log(emailList[0])
+
+  
 
   
   
