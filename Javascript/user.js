@@ -112,76 +112,115 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
 emailList =[]
 
 duplicate = []
+ container = []
 
 
 
 $("#send").click(function()
 {
-         //check if email field contains @ character, if so do a red border 
-         if 
-         (emailInput.value.match(emailRegex)  )
-         {
-             $("#email").css({"border": "3px solid #7FFF94"})
-             {
 
-              //put email into a variable :
-              x = document.getElementById("email").value;
-              // put x at top of emailList:
-              emailList.unshift(x);
-              //check if email is already in list
-               console.log(emailList)
-              for (let i = 1; i <= emailList.length; i++)
-              if(emailList[0] === emailList[i])
-              {
-               
-                 alert("Email already stored")
+        
+        if(imageList.length < 1)
+        {
+          alert("Please select an image ")
 
-            
-                 //move duplicate email to top of duplicate array 
-
-                 duplicate.unshift(emailList[0])
-
-               
-              }
-               //check if newest email is in duplicate list
-              for(let i = 0; i < duplicate.length; i ++)
-              if(emailList[0] === duplicate[i])
-              {
-                emailList.shift(emailList[0])
-                emailList.unshift(duplicate[i])
-
-                console.log(emailList)
-                console.log(duplicate)
-                document.getElementById("email").value.style.display = none;
-                
-
-              
-              }
-
-              let chosen=document.querySelector(".selected-image");
-
-              let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"
-
-              let textSelected = `<div class="selected-image">${text}</div>`
-
-            
-             
-                chosen.insertAdjacentHTML("beforeend", textSelected);
-             
-
-              
-
-             }
         }
 
         else
         {
-            $("#email").css({"border": "3px solid red"})
-            {
-              alert("Please enter valid email address")
-            }
+               //check if email field contains @ character, if so do a red border 
+                  if 
+                  (emailInput.value.match(emailRegex)  )
+                  {
+                      $("#email").css({"border": "3px solid #7FFF94"})
+                      {
+
+                        //put email into a variable :
+                        x = document.getElementById("email").value;
+                        // put x at top of emailList:
+                        emailList.unshift(x);
+                        //check if email is already in list
+                        
+                        for (let i = 1; i <= emailList.length; i++)
+                        if(emailList[0] === emailList[i])
+                        {
+                        
+                          alert("Email already stored")
+
+                      
+                          //move duplicate email to top of duplicate array 
+
+                          duplicate.unshift(emailList[0])
+
+                        
+                        }
+                        //check if newest email is in duplicate list
+                        for(let i = 0; i < duplicate.length; i ++)
+                        if(emailList[0] === duplicate[i])
+                        {
+                          emailList.shift(emailList[0])
+                          emailList.unshift(duplicate[i])
+
+                      
+                          document.getElementById("email").value.style.display = none;
+                          
+
+                        
+                        }
+
+                        let chosen=document.querySelector(".selected-image");
+
+                        let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"
+
+                        let textSelected = `<div class=container><div class="selected-image" >${text}</div></div>`
+
+                        let container = document.getElementsByClassName("container");
+
+
+                        console.log(container)
+
+                       
+
+                   
+
+                         
+
+                        
  
+
+
+                        
+
+                      
+
+                        
+                      
+                          chosen.insertAdjacentHTML("beforeend", textSelected);
+
+                                
+                    
+
+              
+
+                         }
+                                    
+                      
+                    }
+
+                    else
+                    {
+                        $("#email").css({"border": "3px solid red"})
+                        {
+                          alert("Please enter valid email address")
+                      
+                        }
+            
+                    }
+
+
         }
+       
+
     
 })
 
@@ -196,24 +235,40 @@ function SelectImage() {
   email.push(imageList[0])
 
 
-  console.log(emailList)
 
   //display on screen
-  let chosen = document.querySelector(".selected-image");
 
-  photoSelected = imageList[0]
+  first = document.getElementById("first")
 
-  let imageSelected = `<div class="selected-image">${photoSelected}</div>`
+
+  
+  for(i = 0; i = first.length; i++)
+  
+
+  container =[]
+  
+ 
+
+  chosen =  document.querySelector(".container");
+
+
+   photoSelected = imageList[0]
+    
+
+
+   let imageSelected = `<div class="selected-image" id="${i}" >${photoSelected}</div>`
+
+   container.unshift(imageSelected)
   chosen.insertAdjacentHTML("beforeend", imageSelected);
 
-  console.log(emailList[0])
+ 
+
+  
+  
+ 
+  
 
 
- for( i = 1; i < emailList.length; i ++)
-    duplicated = emailList.find(Element => emailList[i] === emailList[0])
-  
- console.log(duplicated.value)
-  
 
   
   

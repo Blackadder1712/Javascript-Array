@@ -281,6 +281,7 @@ $("#send").click(function()
 
 
       let imageSelected = `<div class="selected-image">${result}</div>`
+      
 
 
 
@@ -306,6 +307,7 @@ $("#send").click(function()
 
     else {
       let imageSelected = `<div class="selected-image">${photoSelected}</div>`
+  
       chosen.insertAdjacentHTML("beforeend", imageSelected);
 
 
@@ -337,6 +339,8 @@ $("#send").click(function()
     
          
      }
+
+   
 
     
 

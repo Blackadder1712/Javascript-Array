@@ -36,6 +36,24 @@
    font-family:"Michroma"
 }
 
+.choice
+{
+   width:100%
+}
+
+.container
+{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   background-color: #f9f002;
+   width:90%;
+   align-self: center;
+   border-radius: 5px;
+   border-color: #FA1C16;
+   border-style: solid;
+}
+
 #send, #send::after {
    width: 300px;
    height: 46px;
@@ -104,17 +122,26 @@
  
 .selected-image img
 {
-    margin-top:20px;
+   
+    width:80px;
+    height:80px;
+    margin:10px;
+ 
 }
 
 hr
 {
-    width:100%;
+    width:80%;
     
 }
+
+
  .border
  {
+   display: flex;
+   align-content: center;
     margin-bottom:110px;
+    width:100%;
  }
 
 .image
