@@ -112,7 +112,10 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
 emailList =[]
 
 duplicate = []
- container = []
+
+lorry = []
+
+container = []
 
 
 
@@ -170,14 +173,18 @@ $("#send").click(function()
 
                         let chosen=document.querySelector(".selected-image");
 
-                        let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"
+                        let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>";
 
-                        let textSelected = `<div class=container><div class="selected-image" >${text}</div></div>`
+                        for(i = 0; i < lorry.length; i++);
+
+                        let textSelected = `<div class=container id= "${i}"><div class="selected-image" >${text}</div></div>`
 
                         let container = document.getElementsByClassName("container");
 
+                        lorry.unshift(textSelected)
 
-                        console.log(container)
+
+                        console.log(lorry)
 
                        
 
@@ -247,16 +254,15 @@ function SelectImage() {
 
   container =[]
   
- 
 
-  chosen =  document.querySelector(".container");
+  chosen = document.querySelector(".container")
 
 
    photoSelected = imageList[0]
     
 
 
-   let imageSelected = `<div class="selected-image" id="${i}" >${photoSelected}</div>`
+   let imageSelected = `<div class="selected-image"  >${photoSelected}</div>`
 
    container.unshift(imageSelected)
   chosen.insertAdjacentHTML("beforeend", imageSelected);
