@@ -111,7 +111,7 @@ let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9
 
 emailList =[]
 
-duplicate = []
+
 
 lorry = []
 
@@ -153,23 +153,20 @@ $("#send").click(function()
                       
                           //move duplicate email to top of duplicate array 
 
-                          duplicate.unshift(emailList[0])
-
-                        
-                        }
-                        //check if newest email is in duplicate list
-                        for(let i = 0; i < duplicate.length; i ++)
-                        if(emailList[0] === duplicate[i])
-                        {
-                          emailList.shift(emailList[0])
-                          emailList.unshift(duplicate[i])
-
-                      
+                          
                           document.getElementById("email").value.style.display = none;
+
+                          
                           
 
                         
                         }
+                        //check if newest email is in duplicate list
+                       
+                      
+
+                        
+                  
 
                         let chosen=document.querySelector(".selected-image");
 
@@ -179,7 +176,6 @@ $("#send").click(function()
 
                         let textSelected = `<div class=container id= "${i}"><div class="selected-image" >${text}</div></div>`
 
-                        let container = document.getElementsByClassName("container");
 
                         lorry.unshift(textSelected)
 
@@ -245,11 +241,9 @@ function SelectImage() {
 
   //display on screen
 
-  first = document.getElementById("first")
-
 
   
-  for(i = 0; i = first.length; i++)
+
   
 
   container =[]
@@ -257,6 +251,25 @@ function SelectImage() {
 
   chosen = document.querySelector(".container")
 
+  
+  if (lorry.length > 1)
+    for (i = 1; i < lorry.length; i ++)
+  {
+     console.log(emailList)
+    chosen = document.getElementById(`${i}`)
+    for (i = 1; i < emailList.length; i ++)
+
+    if (emailList.text === emailInput.value)
+    {
+      console.log("yay")
+    }
+
+    
+
+    
+ 
+
+  }
 
    photoSelected = imageList[0]
     
