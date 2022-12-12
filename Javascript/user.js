@@ -110,8 +110,8 @@ let emailInput = document.getElementById('email');
 let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 emailList =[]
-
-
+//duplicate emails 
+copy=[]
 
 lorry = []
 
@@ -151,10 +151,19 @@ $("#send").click(function()
                           alert("Email already stored")
 
                       
-                          //move duplicate email to top of duplicate array 
+                          //put duplicate email into a seperate variable
+                           found = emailList[0]
+                            
+                           //move to seperate array
 
-                          
+                            copy.unshift(found);
+
+                            console.log(found)
+
+                          //dont display duplicate on screen
                           document.getElementById("email").value.style.display = none;
+
+                         
 
                           
                           
@@ -251,25 +260,44 @@ function SelectImage() {
 
   chosen = document.querySelector(".container")
 
-  
+ 
+  //if more than one container (email)
   if (lorry.length > 1)
     for (i = 1; i < lorry.length; i ++)
   {
-     console.log(emailList)
+   
     chosen = document.getElementById(`${i}`)
-    for (i = 1; i < emailList.length; i ++)
+ 
+   //if there are duplicate emails 
+   if(copy.length > 0)
+   {
+       //if there is a duplicate the image will go to its already established container            
+       for(i = 0; i < copy.length; i++)
+       {
+        chosen = document.getElementById(`${i}`)
+       
 
-    if (emailList.text === emailInput.value)
-    {
-      console.log("yay")
-    }
+       console.log(copy)
+       }
 
+
+   }
     
+  }
 
-    
+ 
+   
+
+
+
  
 
-  }
+  
+
+
+
+
+
 
    photoSelected = imageList[0]
     
