@@ -273,17 +273,20 @@ function SelectImage() {
    {
        //if there is a duplicate the image will go to its already established container            
        for(i = 0; i < copy.length; i++)
-       {
+       
         chosen = document.getElementById(`${i}`)
        
 
        console.log(copy)
-       }
+       
+
+        
 
 
    }
-    
   }
+
+  
 
  
    
@@ -306,7 +309,7 @@ function SelectImage() {
    let imageSelected = `<div class="selected-image"  >${photoSelected}</div>`
 
    container.unshift(imageSelected)
-  chosen.insertAdjacentHTML("beforeend", imageSelected);
+   chosen.insertAdjacentHTML("beforeend", imageSelected);
 
  
 
@@ -325,6 +328,6 @@ function SelectImage() {
   
 
    
-  
+  }
  
-}
+
