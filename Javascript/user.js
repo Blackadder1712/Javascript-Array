@@ -256,6 +256,12 @@ function SelectImage() {
   
 
   container =[]
+
+  let varied = copy.filter((element) => 
+{
+   return element === emailInput.value;
+   
+})
   
 
   chosen = document.querySelector(".container")
@@ -269,7 +275,7 @@ function SelectImage() {
     chosen = document.getElementById(`${i}`)
  
    //if there are duplicate emails 
-   if(copy.length > 0)
+   if(varied.length > 0 && varied.length < 2)
    {
        //if there is a duplicate the image will go to its already established container            
        for(i = 0; i < copy.length; i++)
@@ -277,13 +283,19 @@ function SelectImage() {
         chosen = document.getElementById(`${i}`)
        
 
-       console.log(copy)
-       
+       console.log(varied)
 
+       
+     
+    
         
 
 
    }
+   
+  
+   
+  
   }
 
   
