@@ -180,11 +180,12 @@ $("#send").click(function()
                         let chosen=document.querySelector(".selected-image");
 
                         let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>";
+                        
 
                         for(i = 0; i < lorry.length; i++);
 
                         let textSelected = `<div class=container id= "${i}"><div class="selected-image" >${text}</div></div>`
-
+                        document.getElementById("text").innerHTML = x;
 
                         lorry.unshift(textSelected)
 
