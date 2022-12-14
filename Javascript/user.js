@@ -236,6 +236,17 @@ $("#send").click(function()
     
 })
 
+ function Old() 
+ {//if there is a duplicate the image will go to its already established container            
+  for(i = 0; i < copy.length; i++)
+       
+  chosen = document.getElementById(`${i}`)
+ 
+
+
+ }
+
+
 
 function SelectImage() {
   //put displayed photo into email 1st in array
@@ -272,31 +283,21 @@ function SelectImage() {
     for (i = 1; i < lorry.length; i ++)
   {
    
-    chosen = document.getElementById(`${i}`)
- 
-   //if there are duplicate emails 
+        chosen = document.getElementById(`${i}`)
+    
+      //if there are duplicate emails 
+  
+   }
+   
    if(varied.length > 0 && varied.length < 2)
    {
-       //if there is a duplicate the image will go to its already established container            
-       for(i = 0; i < copy.length; i++)
-       
-        chosen = document.getElementById(`${i}`)
-       
-
-       console.log(varied)
-
-       
+     Old()
      
     
-        
-
-
    }
    
   
-   
   
-  }
 
   
 
