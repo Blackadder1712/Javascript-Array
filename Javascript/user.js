@@ -107,7 +107,7 @@ function SearchPhotos()
 
 //regex variables 
 let emailInput = document.getElementById('email');
-let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+let emailRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$';
 
 emailList =[]
 //duplicate emails 
