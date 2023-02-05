@@ -218,7 +218,17 @@ $("#send").click(function()
 
                          }
                                     
-                      
+                       document.getElementById("send").style.display = "none";
+                       document.getElementById("save").style.display = "block";
+                       document.getElementById("email").addEventListener("click", function()
+                        {
+                          if (document.getElementById("send").style.display = "none")
+                          {
+                            document.getElementById("send").style.display = "block";
+                            document.getElementById("save").style.display = "none";
+
+                          }
+                        })
                     }
 
                     else

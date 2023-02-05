@@ -93,6 +93,7 @@ input[type=text]#email, textarea #email {
   margin-top: 20px;
   margin-bottom: 20px;
   font-family: "Michroma";
+  display: none;
 }
 
 #select {
