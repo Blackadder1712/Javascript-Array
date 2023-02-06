@@ -189,7 +189,7 @@ $("#send").click(function()
                         for(i = 0; i < lorry.length; i++);
 
                         let textSelected = `<div class=container id= "${i}"><div class="selected-image" >${text}</div></div>`
-                        document.getElementById("text").innerHTML = x;
+                        
 
                         lorry.unshift(textSelected)
 
@@ -355,7 +355,7 @@ function SelectImage()
            email.shift()
           console.log(email)
           
-            alert("Duplicate")
+            alert("Duplicate image, please select New image to continue....")
             email.pop()
 
             chosen.removeChild(chosen.lastElementChild)
