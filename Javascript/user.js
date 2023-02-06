@@ -148,7 +148,10 @@ $("#send").click(function()
                         for (let i = 1; i <= emailList.length; i++)
                         if(emailList[0] === emailList[i])
                         {
-                        
+                           
+                          document.getElementById("send").style.display = "none";
+                          document.getElementById("save").style.display = "block";
+
                           alert("Email already stored")
 
                       
@@ -191,7 +194,7 @@ $("#send").click(function()
                         lorry.unshift(textSelected)
 
 
-                        console.log(lorry)
+                       
 
                        
 
@@ -259,26 +262,54 @@ $("#send").click(function()
  }
 
 
+ email = []
+function SelectImage()
 
-function SelectImage() {
+{
   //put displayed photo into email 1st in array
   emailList.unshift(email)
-  email = []
+
+
 
   email.unshift(x)
 
-  email.push(imageList[0])
+  email.unshift(imageList[0])
 
 
 
   //display on screen
 
 
+  console.log(email)
+
+
+ for(let i = 1; i < email.length; i++)
+ 
+ 
+ if (email[0] === email[i])
+ {
+  
+
+   email.unshift() 
+
+   
+   
+
+    
+ }
+
+ 
+
+
+
+
+ 
   
 
   
 
   container =[]
+
 
   let varied = copy.filter((element) => 
 {
@@ -308,25 +339,6 @@ function SelectImage() {
     
    }
    
-  
-  
-
-  
-
- 
-   
-
-
-
- 
-
-  
-
-
-
-
-
-
    photoSelected = imageList[0]
     
 
@@ -335,23 +347,49 @@ function SelectImage() {
 
    container.unshift(imageSelected)
    chosen.insertAdjacentHTML("beforeend", imageSelected);
+      
+      /*console.log(email)
+      console.log(emailList)
+      console.log(lorry)*/
+      console.log(email)
+        //if duplicate image to email adress do not display,check the lorry isnt holding duplicate elements  
+        for(let i = 1; i < email.length; i++ ) 
+        if(email[0] === email[i] )
+        {
+           email.shift()
+          console.log(email)
+          
+            alert("Duplicate")
+            email.pop()
+
+            chosen.removeChild(chosen.lastElementChild)
+            document.getElementById("save").style.display = "none";
+
+            document.getElementById("new").addEventListener("click", function()
+            {
+              document.getElementById("save").style.display = "block";
+
+            })
+
+          
+        }
+
+      
+
+     
+}
+
+    
+
+    
+  
+
+    
 
  
 
-  
-  
+    
+
  
   
-
-
-
-  
-  
-
-
-  
-  
-
-   
-  }
  
