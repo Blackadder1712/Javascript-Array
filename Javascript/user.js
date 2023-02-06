@@ -266,6 +266,8 @@ $("#send").click(function()
 function SelectImage()
 
 {
+
+  console.log(emailList)
   //put displayed photo into email 1st in array
 
 
