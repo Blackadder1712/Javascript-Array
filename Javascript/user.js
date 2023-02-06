@@ -267,11 +267,7 @@ function SelectImage()
 
 {
   //put displayed photo into email 1st in array
-  emailList.unshift(email)
 
-
-
-  email.unshift(x)
 
   email.unshift(imageList[0])
 
