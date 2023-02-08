@@ -115,7 +115,7 @@ emailList =[];//list of emails//
 
 
 container= []  //holds all the onscreen emails and there images 
-emailBox = []; //holds the htmls of the emails so they appear on screen
+copy=[]
 
 email = [] // hold list of selected images 
 
@@ -134,32 +134,66 @@ $("#send").click(function()
                   {
                       $("#email").css({"border": "3px solid #7FFF94"})
                       {
+                        let photoSelected = imageList[0]   //onscreen image into variable
 
-                        //put email into a variable :
-                        email = [document.getElementById("email").value];
-                        // email variable goes to top of emailList array
-                        emailList.unshift(email) //email goes into emailList
-                        let chosen=document.querySelector(".selected-image");// where in html we want email/image displayed 
-                        let text = document.getElementById("email").value + "<br>"
+                        email = [document.getElementById("email").value];           //put email into a variable 
+
+                         email.unshift(photoSelected ) //put onscreen image into email array
+                                                                            
+                        emailList.unshift(email)    //email goes into emailList
+
+                        console.log(email)
+                        console.log(emailList)
+
+                        for(i = 1; i < emailList.length;i++) //delete duplicate email
+                        if(emailList[0][1]===emailList[i][1])
+                        {
+                       
+                          //put duplicate email into a seperate variable
+                          found = emailList[0]
+                            
+                          //move to seperate array
+
+                          copy.unshift(found);
+                          emailList.shift()
+                          console.log(found)
+                          console.log(emailList)
+                            
+                        }
+
+
+                      
+                        
+                       // let chosen=document.querySelector(".selected-image");// where in html we want email/image displayed
+                       // let chosen2 = document.querySelector(".container");
+                        //let text = document.getElementById("email").value + "<br>"
                          + "<hr>" + "<br>"; // html variable to show email on screen
-                        selectedPic = imageList[0] //onscreen image into variable
+                        
                         
                         for(i = 0; i < emailBox.length; i++);
                         let textSelected = `<div class= "container" id= "${i}"><div class="selected-image" > 
-                        ${text} ${selectedPic}
+                        ${text} 
+                        
                         </div></div>`
+
+                        let imageSelected =`${photoSelected}`
+                       
+
                         
                      
 
                         emailBox.unshift(textSelected) // puts htmls into an array
+                        
+                        emailBox.unshift(imageSelected)
                         console.log(emailList)
-                        email.unshift(selectedPic) // move onscreen image into email array
+                        email.unshift(imageSelected) // move onscreen image into email array
 
                          container.unshift(emailBox) // moves html boxes into container array to be sorted 
                   
                          console.log(container)
                                
                         chosen.insertAdjacentHTML("beforeend", textSelected); // append email to screen
+                        chosen2.insertAdjacentHTML("beforeend", imageSelected); // append email to screen
 
                  
                              
@@ -174,47 +208,41 @@ $("#send").click(function()
                              for(i = 1 ; i < emailList.length; i++)
                              if (emailList[0][1] === emailList[i][1])
                              {
-                                 alert("Email already stored")
-                                 duplicate = emailList[i] //duplicate goes into duplicate array 
-                                 duplicateEmail = emailList[i][1]  // duplicate email address
-                                 duplicate.unshift(selectedPic)  //picture goes into this array
-                                 console.log(duplicate)
+                               
+                                  console.log(emailList[0][0])
+                       
                                  image = document.querySelector(".selected-image"); // where pic goes
                                  image.removeChild(image.lastElementChild)// dont show duplicate email box 
+                             
                                  for(j=0; j < emailBox.length; j++)
                                  if( emailBox[j].includes(duplicateEmail))
                                  {
-                                
-                                  console.log(emailBox)
-                           
+                                    container.unshift(emailBox[j]);
+                                    console.log("help")
+                                    
+                       
                                  }
-                                 
-                                
-                               
-                                
-                              
-                                 
+      
+                              }
+                              else
+                              {
+                                for (i = 1; i < container.length; i ++)
+                                  chosen2 = document.getElementById(`${i}`)
+     
                               }
 
+                              
+                              
+                             
+
                                 
-  if (emailBox.length > 1)
-  for (i = 1; i < emailBox.length; i ++)
-    {
-      console.log(emailList)
-      chosen = document.getElementById(`${i}`)
-      for (i = 1; i < emailList.length; i ++)
 
-      if (emailList.text === emailInput.value)
-      {
-        console.log("yay")
-      }
 
       
 
       
 
 
-    }
 
                        
                                
@@ -235,6 +263,9 @@ $("#send").click(function()
               
                       }
             }
+
+         
+      
   })                      
                   
                 

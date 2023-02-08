@@ -38,7 +38,7 @@ function SearchPhotos()
     const htmls = Math.floor(Math.random() * data.length) + 0;
 
 
-    let html = `  <img class="image" src="${data[htmls].download_url}">`;
+    let html = `  <img class="image" id="img" src="${data[htmls].download_url}">`;
 
 
 
@@ -142,18 +142,14 @@ $("#send").click(function()
                         //put email into a variable :
                         x = document.getElementById("email").value;
                         // put x at top of emailList:
-                        emailList.unshift(x);
+                        emailList.unshift (x);
                         //check if email is already in list
                         
                         for (let i = 1; i <= emailList.length; i++)
                         if(emailList[0] === emailList[i])
                         {
                            
-                          document.getElementById("send").style.display = "none";
-                          document.getElementById("save").style.display = "block";
-
-                          alert("Email already stored")
-
+                        
                       
                           //put duplicate email into a seperate variable
                            found = emailList[0]
@@ -167,12 +163,6 @@ $("#send").click(function()
                           //dont display duplicate on screen
                           document.getElementById("email").value.style.display = none;
 
-                         
-
-                          
-                          
-
-                        
                         }
                         //check if newest email is in duplicate list
                        
@@ -181,7 +171,7 @@ $("#send").click(function()
                         
                   
 
-                        let chosen=document.querySelector(".selected-image");
+                        let chosen=document.querySelector(".selected-image"); 
 
                         let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>";
                         
@@ -261,7 +251,7 @@ $("#send").click(function()
 
  }
 
-
+ 
  email = []
 function SelectImage()
 
@@ -270,7 +260,7 @@ function SelectImage()
   console.log(emailList)
   //put displayed photo into email 1st in array
 
-
+  email.unshift(emailList)   
   email.unshift(imageList[0])
 
 
@@ -278,7 +268,7 @@ function SelectImage()
   //display on screen
 
 
-  console.log(email)
+  console.log(emailList)
 
 
  for(let i = 1; i < email.length; i++)
@@ -314,6 +304,8 @@ function SelectImage()
    return element === emailInput.value;
    
 })
+
+
   
 
   chosen = document.querySelector(".container")
@@ -346,20 +338,20 @@ function SelectImage()
    container.unshift(imageSelected)
    chosen.insertAdjacentHTML("beforeend", imageSelected);
       
-      /*console.log(email)
+    
       console.log(emailList)
-      console.log(lorry)*/
+     
       console.log(email)
         //if duplicate image to email adress do not display,check the lorry isnt holding duplicate elements  
         for(let i = 1; i < email.length; i++ ) 
-        if(email[0] === email[i] )
+        if(email[0] === email[i])
         {
            email.shift()
-          console.log(email)
+          console.log(emailList)
           
             alert("Duplicate image, please select New image to continue....")
-            email.pop()
-
+            document.getElementById("img").style.display = "none";
+             
             chosen.removeChild(chosen.lastElementChild)
             document.getElementById("save").style.display = "none";
 

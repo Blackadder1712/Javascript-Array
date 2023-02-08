@@ -158,8 +158,7 @@ main {
 
 .neon {
   text-shadow: 0 0 3vw #F4BD0A;
-  -webkit-animation: flux 2s linear infinite;
-          animation: flux 2s linear infinite;
+  animation: flux 2s linear infinite;
   color: yellow;
   font-size: 40px;
   font-family: "Michroma";
@@ -167,17 +166,7 @@ main {
 
 .flux {
   text-shadow: 0 0 3vw #179e05;
-  -webkit-animation: flux 2s linear infinite;
-          animation: flux 2s linear infinite;
-}
-
-@-webkit-keyframes neon {
-  0%, 100% {
-    text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 0.4vw #FED128, 0.5vw 0.5vw 0.1vw #806914;
-  }
-  50% {
-    text-shadow: 0 0 0.5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 0.2vw #800E0B, 0.5vw 0.5vw 0.1vw #40340a;
-  }
+  animation: flux 2s linear infinite;
 }
 
 @keyframes neon {
@@ -186,14 +175,6 @@ main {
   }
   50% {
     text-shadow: 0 0 0.5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 0.2vw #800E0B, 0.5vw 0.5vw 0.1vw #40340a;
-  }
-}
-@-webkit-keyframes flux {
-  0%, 100% {
-    text-shadow: 0 0 1vw #10ff4c, 0 0 3vw #10ff4c, 0 0 10vw #10ff4c, 0 0 10vw #10ff4c, 0 0 0.4vw #8bfdfe, 0.5vw 0.5vw 0.1vw #147280;
-  }
-  50% {
-    text-shadow: 0 0 0.5vw #024218, o o 1.5vw #024713, 0 0 5vw #023812, 0 0 5vw #012707, 0 0 0.2vw #022201, 0.5vw 0.5vw 0.1vw #011a06;
   }
 }
 @keyframes flux {
