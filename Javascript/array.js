@@ -111,13 +111,24 @@ let emailInput = document.getElementById('email');
 let emailRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$';
 
 
-emailList =[];//list of emails//
+emailList =[];// puts email into an array
 
 
-container= []  //holds all the onscreen emails and there images 
-copy=[]
+lorry= [] ; //holds all the onscreen emails and there images 
+copy=[];
+photo= []
 
-email = [] // hold list of selected images 
+function Old() 
+{//if there is a duplicate the image will go to its already established container            
+ for(i = 0; i < copy.length; i++)
+      
+ chosen = document.getElementById(`${i}`)
+
+
+
+}
+
+ // hold list of selected images 
 
 $("#send").click(function()
 {
@@ -134,15 +145,50 @@ $("#send").click(function()
                   {
                       $("#email").css({"border": "3px solid #7FFF94"})
                       {
-                        let photoSelected = imageList[0]   //onscreen image into variable
-
-                        email = [document.getElementById("email").value];           //put email into a variable 
-
-                         email.unshift(photoSelected ) //put onscreen image into email array
-                                                                            
-                        emailList.unshift(email)    //email goes into emailList
-
+                        //let photoSelected = imageList[0]   //onscreen image into variable
+                        email=[] //hold the email address 
+                        x = document.getElementById("email").value;   //email info in variable  
+                        
+                        email.unshift(x) // push the email info into email array
+                       
+                        if (lorry.length > 1)
+                        for (i = 1; i < lorry.length; i ++)
+                      {
+                       
+                            chosen = document.getElementById(`${i}`)
+                        
+                          //if there are duplicate emails 
+                      
+                       }
+                     
+                    
+                        emailList.unshift(email) // push email into emailList
+                        email.unshift(imageList[0]) // push photo into the email array
                         console.log(email)
+                        console.log(emailList)
+                        let chosen=document.querySelector(".selected-image"); //where email/image display
+                       
+                        let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>";  //display format                     
+                       
+                        photoSelected = imageList[0] //selected image variable
+                        for(i = 0; i < lorry.length; i++);
+                        let textSelected = `<div class=container id= "${i}"><div class="selected-image" >${text}${photoSelected}</div></div>`
+                   
+                        chosen.insertAdjacentHTML("beforeend", textSelected);  
+                        
+                        
+                 
+
+                       /* let chosen=document.querySelector(".selected-image");   //where to display email
+                        let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>";  //what to display
+                        let textSelected = `<div class=container id= "${i}"><div class="selected-image" >${text}</div></div>`; //email html 
+
+
+                        
+                                                                            
+                   
+
+                      
                         console.log(emailList)
 
                         for(i = 1; i < emailList.length;i++) //delete duplicate email
@@ -170,13 +216,7 @@ $("#send").click(function()
                          + "<hr>" + "<br>"; // html variable to show email on screen
                         
                         
-                        for(i = 0; i < emailBox.length; i++);
-                        let textSelected = `<div class= "container" id= "${i}"><div class="selected-image" > 
-                        ${text} 
-                        
-                        </div></div>`
-
-                        let imageSelected =`${photoSelected}`
+             
                        
 
                         
@@ -261,12 +301,12 @@ $("#send").click(function()
                         
                           }
               
-                      }
+                        */               }
             }
 
          
-      
-  })                      
+    
+  }                     
                   
                 
                      
@@ -277,5 +317,5 @@ $("#send").click(function()
              
                         
                      
-                 
-
+}                
+)

@@ -117,7 +117,7 @@ lorry = [] //holds all the containers that contain images/emails
 
 container = [] //holds all the image htmls
 
-email = []
+email = x =[]
 
 
 
@@ -130,9 +130,9 @@ $("#send").click(function()
         }
         else
         {
-            x = document.getElementById("email").value; //put user input into an array
+             x = document.getElementById("email").value; //put user input into a variable
             console.log(x)
-            emailList.unshift(x); //put email at the top of the emailList
+          
             for(i = 1; i < emailList.length; i++)//check if email already exists if so move the element to top delete new 
             if(emailList[0] === emailList[i]) 
             {
