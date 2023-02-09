@@ -125,6 +125,8 @@ function emailCopy()
 
 
 
+
+
 $("#send").click(function()
 {
     if(imageList.length < 1)
@@ -133,70 +135,72 @@ $("#send").click(function()
 
         }
         else
-        {
-            
-            email = [] // list of email data
-            x = document.getElementById("email").value; //put user input into a variable
-            email.unshift(x) // move user input into email list
-            console.log(email)
-            inbox.unshift(email)// move list off emails into an array
-             photo = imageList[0] // put picked image into a variable 
-             email.unshift(photo) // put chosen photo into email
-            console.log(inbox)
-            console.log(inbox[0])
-
-            
+        {   
            
+                email = [] // list of email data
+                x = document.getElementById("email").value; //put user input into a variable
+                email.unshift(x) // move user input into email array
+                console.log(email)
+                inbox.unshift(email)// move list off emails into a larger array
+                photo = imageList[0] // put picked image into a variable 
+                email.unshift(photo) // put chosen photo into email
+                console.log(inbox)
+                console.log(inbox[0])
                 
                
-            
-        
-          
+                    let chosen=document.querySelector(".selected-image"); //where image goes
+                    let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; // text content and format
+                    for(i = 0; i < container.length; i++);//loop through containers so email is applied to each one
+                   let textSelected = `<div class=container id= "${i}"><div class="selected-image" id ="${i}" >${text}  ${photo}</div></div>`;//email html
+                    box.unshift(textSelected) ;// holds all the boxes that contain each set of htmls
+                    console.log(box)
                 
-
-
-           
-            for(i = 1; i < inbox.length; i++)
-            if(inbox[0][1]===inbox[i][1])
-            { 
-          
-               console.log("help")
-               inbox[i].push(photo)  //photo goes into duplicate email instead of creating another element
-               console.log(inbox[i])
-               let chosen=document.querySelector(".container");
-               container.shift()
-               for(i = 0; i < container.length; i++);//loop through containers so email is applied to each one
-               let textSelected = `<div class="selected-image" id= "${i}" > ${photo}</div>`;//email html
-              box.unshift(textSelected) ;// holds all the boxes that contain each set of htmls
-               chosen.insertAdjacentHTML("beforeend", textSelected);
-               container.unshift(box)
-               console.log(container)
-               box.unshift(photo);// put image in outer container
-               console.log(container)
+                   // if(box)
+                   console.log(box)
+                    container.unshift(box)
              
-                 //if more than one container (email)
-   
-               for(i = 0; i < container.length; i++);//loop through containers so image is applied
-               
-               
-            }
+                    console.log(box)
+                    chosen.insertAdjacentHTML("beforeend", textSelected);
+                    console.log(container)
+                    // if more than one container (email)
+                    for(i = 0; i < container.length; i++);//loop through containers so image is applied
 
-            let chosen=document.querySelector(".selected-image");
-            let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; // text content and format
-            for(i = 0; i < container.length; i++);//loop through containers so email is applied to each one
-            let textSelected = `<div class=container id= "${i}"><div class="selected-image" id ="${i}" >${text}  ${photo}</div></div>`;//email html
-           box.unshift(textSelected) ;// holds all the boxes that contain each set of htmls
-            chosen.insertAdjacentHTML("beforeend", textSelected);
-            container.shift()
-            box.unshift(photo);// put image in outer container
+                            for(i = 1; i < inbox.length; i++)
+
+                            if(inbox[0][1]===inbox[i][1])
+                            { 
+                                for(i = 1; i < box.length; i ++)
+                                if(box[0].includes(box[i]))
+                                {
+                                  console.log(photo)
+                                }
+                            
+                             console.log("help")
+                             // inbox[i].unshift(photo)  //photo goes into duplicate email instead of creating another element
+                             console.log(inbox)
+                             chosen=document.querySelector(".container");//where we want image displayed*/
+                            
+                             for(i = 0; i < container.length; i++);//loop through containers so email is applied to each one
+                                let textSelected = `<div class="selected-image" id ="${i}" > ${photo}</div>`;//image html
+                            
+                             chosen.insertAdjacentHTML("beforeend", textSelected);
+                             inbox.pop()
+                             // box.shift(photo);// put image in outer container
+                             console.log(container)
+                             container.shift()
+                             console.log(container)
+                           
+                    
+                            
+                            
+                            
+                            
+                    
+                
+                            }
+
+      
         
-        
-            //if more than one container (email)
-
-            for(i = 0; i < container.length; i++);//loop through containers so image is applied
-
-            
-
-            
+              
         }
 })        
