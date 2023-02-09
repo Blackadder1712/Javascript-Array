@@ -148,47 +148,74 @@ $("#send").click(function()
                 console.log(inbox[0])
                 
                
-                    let chosen=document.querySelector(".selected-image"); //where image goes
+                    /*let chosen=document.querySelector(".selected-image"); //where image goes
                     let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; // text content and format
                     for(i = 0; i < container.length; i++);//loop through containers so email is applied to each one
                    let textSelected = `<div class=container id= "${i}"><div class="selected-image" id ="${i}" >${text}  ${photo}</div></div>`;//email html
                     box.unshift(textSelected) ;// holds all the boxes that contain each set of htmls
                     console.log(box)
                 
-                   // if(box)
                    console.log(box)
                     container.unshift(box)
              
                     console.log(box)
                     chosen.insertAdjacentHTML("beforeend", textSelected);
                     console.log(container)
-                    // if more than one container (email)
-                    for(i = 0; i < container.length; i++);//loop through containers so image is applied
+                   for(i = 0; i < container.length; i++);//loop through containers so image is applied
+                   */
 
-                            for(i = 1; i < inbox.length; i++)
 
-                            if(inbox[0][1]===inbox[i][1])
-                            { 
-                                for(i = 1; i < box.length; i ++)
-                                if(box[0].includes(box[i]))
-                                {
-                                  console.log(photo)
-                                }
+
+                                
+                          
                             
-                             console.log("help")
-                             // inbox[i].unshift(photo)  //photo goes into duplicate email instead of creating another element
-                             console.log(inbox)
-                             chosen=document.querySelector(".container");//where we want image displayed*/
                             
-                             for(i = 0; i < container.length; i++);//loop through containers so email is applied to each one
-                                let textSelected = `<div class="selected-image" id ="${i}" > ${photo}</div>`;//image html
+                             //inbox[i].unshift(photo)  //photo goes into duplicate email instead of creating another element
+                             console.log(box)
+                   
                             
-                             chosen.insertAdjacentHTML("beforeend", textSelected);
-                             inbox.pop()
-                             // box.shift(photo);// put image in outer container
-                             console.log(container)
-                             container.shift()
-                             console.log(container)
+                         
+                                                       
+                             //console.log(container)
+                  
+                        
+                                    console.log(box)
+                                    for(i = 0; i < container.length; i++);//loop through containers so email is applied to each one
+                                    let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; // text content and format
+                                 
+                            
+                                    chosen=document.querySelector(".container");
+                                    let textSelected = `<div class="selected-image" id ="${i}" >${text} </div></div>`;//email html
+                                    let photoSelected = `<div class="selected-image" id ="${i}" > ${photo}</div></div>`;//image html
+                            
+                                    if(!box.includes(textSelected)) //check if display already shows email
+                                    {
+                                        chosen.insertAdjacentHTML("beforeend", textSelected); //displays email
+                                        chosen.insertAdjacentHTML("beforeend", photoSelected);//displays image 
+                                    }
+                                    if(box.includes(photoSelected))
+                                    {
+                                        chosen=document.querySelector(".design");
+                                    }
+                                    console.log(box)
+
+                                    if(box.includes(textSelected))
+                                    {
+                                        chosen.insertAdjacentHTML("beforeend", photoSelected);
+                                    }
+                                 
+                              
+                            
+                                                        
+                                console.log(container)
+                                box.unshift(textSelected)
+                                box.unshift(photoSelected)
+                        
+                                console.log(container)
+                                console.log(box)
+                       
+                           
+                           
                            
                     
                             
@@ -197,7 +224,7 @@ $("#send").click(function()
                             
                     
                 
-                            }
+                           
 
       
         

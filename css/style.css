@@ -96,6 +96,10 @@ input[type=text]#email, textarea #email {
   display: none;
 }
 
+.design {
+  display: none;
+}
+
 #select {
   margin-bottom: 20px;
   margin-top: 20px;
