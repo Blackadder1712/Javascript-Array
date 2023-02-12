@@ -185,24 +185,29 @@ $("#send").click(function()
                                     let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; // text content and format
                                  
                             
-                                    chosen=document.querySelector(".container");
-                                    let textSelected = `<div class="selected-image" id ="${i}" >${text} </div></div>`;//email html
-                                    let photoSelected = `<div class="selected-image" id ="${i}" > ${photo}</div></div>`;//image html
+                                    chosen=document.querySelector(".selected-image");
+                                 
+                                    textSelected = `<div class=container id= "${i}"><div class="selected-image" >${text}</div></div>`;
+                                    chosentwo = document.getElementById(`${i}`);//put image in correct box 
+                                    let photoSelected = `${photo}` // photo html to go in container 
                             
                                     if(!box.includes(textSelected)) //check if display already shows email
                                     {
                                         chosen.insertAdjacentHTML("beforeend", textSelected); //displays email
-                                        chosen.insertAdjacentHTML("beforeend", photoSelected);//displays image 
+                                        chosentwo.insertAdjacentHTML("beforeend", photoSelected);//displays image 
                                     }
                                     if(box.includes(photoSelected))
                                     {
                                         chosen=document.querySelector(".design");
+                                        chosentwo=document.querySelector(".design");
+                                        console.log("help")
+                                        
                                     }
                                     console.log(box)
 
                                     if(box.includes(textSelected))
                                     {
-                                        chosen.insertAdjacentHTML("beforeend", photoSelected);
+                                        chosentwo.insertAdjacentHTML("beforeend", photoSelected);
                                     }
                                  
                               
