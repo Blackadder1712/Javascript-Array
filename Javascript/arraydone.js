@@ -112,7 +112,7 @@ inbox=[]
 container = [] // hold all the boxes 
 
 box = [] //holds the htmls of the emails/images to show on screen
-
+ lorry= []
 function emailCopy() 
 {//if there is a duplicate the image will go to its already established container            
  for(i = 0; i < copy.length; i++)
@@ -211,8 +211,8 @@ $("#send").click(function()
                                 console.log(container)
                                 box.unshift(textSelected)//put email display into box
                                 box.unshift(photoSelected)//put image into box 
-                                //container.unshift(box)//moves containers into box 
-                                //console.log(container)
+                                lorry.unshift(box)//moves containers into box 
+                                console.log(container)
                                 console.log(box)
                        
                            
