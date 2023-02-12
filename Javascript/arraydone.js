@@ -1,3 +1,5 @@
+
+
 imageList = [];
 
 // when you click the "new image " button
@@ -112,7 +114,7 @@ inbox=[]
 container = [] // hold all the boxes 
 
 box = [] //holds the htmls of the emails/images to show on screen
- lorry= []
+
 function emailCopy() 
 {//if there is a duplicate the image will go to its already established container            
  for(i = 0; i < copy.length; i++)
@@ -185,39 +187,35 @@ $("#send").click(function()
                                     let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; // text content and format
                                  
                             
-                                    chosen=document.querySelector(".selected-image");
-                                 
-                                    textSelected = `<div class=container id= "${i}"><div class="selected-image" >${text}</div></div>`;
-                                    chosentwo = document.getElementById(`${i}`);//put image in correct box 
-                                    let photoSelected = `${photo}` // photo html to go in container 
+                                    chosen=document.querySelector(".container");
+                                    let textSelected = `<div class="selected-image" id ="${i}" >${text} </div></div>`;//email html
+                                    let photoSelected = `<div class="selected-image" id ="${i}" > ${photo}</div></div>`;//image html
                             
                                     if(!box.includes(textSelected)) //check if display already shows email
                                     {
                                         chosen.insertAdjacentHTML("beforeend", textSelected); //displays email
-                                        chosentwo.insertAdjacentHTML("beforeend", photoSelected);//displays image 
+                                        chosen.insertAdjacentHTML("beforeend", photoSelected);//displays image 
                                     }
                                     if(box.includes(photoSelected))
                                     {
                                         chosen=document.querySelector(".design");
-                                        chosentwo=document.querySelector(".design");
-                                        console.log("help")
-                                        
                                     }
                                     console.log(box)
 
                                     if(box.includes(textSelected))
                                     {
-                                        chosentwo.insertAdjacentHTML("beforeend", photoSelected);
+                                        chosen.insertAdjacentHTML("beforeend", photoSelected);
                                     }
                                  
                               
                             
                                                         
                                 console.log(container)
+                               
                                 box.unshift(textSelected)//put email display into box
                                 box.unshift(photoSelected)//put image into box 
-                                lorry.unshift(box)//moves containers into box 
-                                console.log(container)
+                                //container.unshift(box)//moves containers into box 
+                                //console.log(container)
                                 console.log(box)
                        
                            
