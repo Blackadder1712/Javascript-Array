@@ -112,9 +112,9 @@ let emailRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0
 inbox=[]
 
 container = [] // hold all the boxes 
-
+copy = []
 box = [] //holds the htmls of the emails/images to show on screen
-
+address = []
 function emailCopy() 
 {//if there is a duplicate the image will go to its already established container            
  for(i = 0; i < copy.length; i++)
@@ -141,7 +141,29 @@ $("#send").click(function()
            
                 email = [] // list of email data
                 x = document.getElementById("email").value; //put user input into a variable
-                email.unshift(x) // move user input into email array
+                address.unshift(x)
+                email.unshift(address) // move user input into email array
+            
+                console.log(address)
+                for (let i = 1; i <= address.length; i++)
+                if(address[0] === address[i])
+                {
+                    console.log(address)
+              
+                   
+                 
+              
+                  //put duplicate email into a seperate variable
+                   found = address[i]
+                    
+                   //move to to top of seperate array
+                   copy.unshift(found)
+                   //remove new email
+                   address.shift()
+
+                   
+                    console.log(address)                
+                }
                 console.log(email)
                 inbox.unshift(email)// move list off emails into a larger array
                 photo = imageList[0] // put picked image into a variable 

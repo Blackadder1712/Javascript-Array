@@ -1,10 +1,6 @@
 @media screen and (min-width: 768px)
 {   
-    main
-    {
-        height:600px;
-    }
-
+ 
     #text
     {
         display: flex;
@@ -15,7 +11,10 @@
     {
         margin-top:40px;
     }
-
+    main
+    {
+       margin-bottom:300px;
+    }
   
 
     .image
@@ -50,6 +49,13 @@
 
 @media screen and (min-width: 992px)
 {
+
+   
+
+    body
+    {
+        background-repeat: repeat-y
+    };
     main
     {
        display: flex;
@@ -123,7 +129,7 @@
     
    
     }
-    @media screen and (min-width: 992px)
+    @media screen and (min-width: 1025px)
     {
         .border
         {margin-left:40px;}
@@ -133,6 +139,10 @@
            
             width:90px;
             height:90px;
+        }
+        .main-center
+        {
+            height:100%;
         }
 
    
