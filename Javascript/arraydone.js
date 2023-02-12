@@ -59,13 +59,6 @@ function SearchPhotos() {
         }
 
 
-
-
-
-
-
-
-
         //display on screen
 
 
@@ -73,32 +66,8 @@ function SearchPhotos() {
         image.insertAdjacentHTML("beforeend", html)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         //convert into javascript
     });
-
-
-
 
 
 
@@ -107,19 +76,18 @@ function SearchPhotos() {
 //regex variables 
 let emailInput = document.getElementById('email');
 
-let emailRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$';
+let emailRegex = '^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$';
 
-inbox=[]
+inbox = []
 
 container = [] // hold all the boxes 
 copy = []
 box = [] //holds the htmls of the emails/images to show on screen
 address = []
-function emailCopy() 
-{//if there is a duplicate the image will go to its already established container            
- for(i = 0; i < copy.length; i++)
-      
- chosen = document.getElementById(`${i}`)
+function emailCopy() {//if there is a duplicate the image will go to its already established container            
+    for (i = 0; i < copy.length; i++)
+
+        chosen = document.getElementById(`${i}`)
 
 
 
@@ -129,102 +97,114 @@ function emailCopy()
 
 
 
-$("#send").click(function()
-{
-    if(imageList.length < 1)
-        {
-          alert("Please select an image ")
+$("#send").click(function () {
+    if (imageList.length < 1) {
+        alert("Please select an image ")
 
-        }
-        else
-        {   
-           
+    }
+    else {
+         //check if email field contains @ character, if so do a red border 
+         if 
+         (emailInput.value.match(emailRegex))
+         {
+            $("#email").css({"border": "3px solid #7FFF94"})
+            {
+
+
                 email = [] // list of email data
                 x = document.getElementById("email").value; //put user input into a variable
                 address.unshift(x)
                 email.unshift(address) // move user input into email array
-            
-          
-                for (let i = 1; i <= address.length; i++)
-                if(address[0] === address[i])
-                {
-                 
-              
-                   
-                 
-              
-                  //put duplicate email into a seperate variable
-                   found = address[i]
-                    
-                   //move to to top of seperate array
-                   copy.unshift(found)
-                   //remove new email
-                   address.shift()
 
-                   
-                         
-                }
-  
+
+                for (let i = 1; i <= address.length; i++)
+                    if (address[0] === address[i]) {
+
+
+
+
+
+                        //put duplicate email into a seperate variable
+                        found = address[i]
+
+                        //move to to top of seperate array
+                        copy.unshift(found)
+                        //remove new email
+                        address.shift()
+
+
+
+                    }
+
                 inbox.unshift(email)// move list off emails into a larger array
                 photo = imageList[0] // put picked image into a variable 
                 email.unshift(photo) // put chosen photo into email
-            
-                
-                
 
-                                
-                          
-                            
-                     
-                                    for(i = 0; i < container.length; i++);//loop through containers so email is applied to each one
-                                    let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; // text content and format
-                                 
-                            
-                                    chosen=document.querySelector(".container");
-                                    let textSelected = `<div class="selected-image" id ="${i}" >${text} </div></div>`;//email html
-                                    let photoSelected = `<div class="selected-image" id ="${i}" > ${photo}</div></div>`;//image html
-                            
-                                    if(!box.includes(textSelected)) //check if display already shows email
-                                    {
-                                        chosen.insertAdjacentHTML("beforeend", textSelected); //displays email
-                                        chosen.insertAdjacentHTML("beforeend", photoSelected);//displays image 
-                                    }
-                                    if(box.includes(photoSelected))
-                                    {
-                                        alert("Image already stored" )
-                                        chosen=document.querySelector(".design");
-                                    }
-                                   
 
-                                    if(box.includes(textSelected))
-                                    {
-                                        chosen.insertAdjacentHTML("beforeend", photoSelected);
-                                    }
-                                 
-                              
-                            
-                                                        
-                               
-                               
-                                box.unshift(textSelected)//put email display into box
-                                box.unshift(photoSelected)//put image into box 
-                                //container.unshift(box)//moves containers into box 
-                            
-                       
-                           
-                           
-                           
-                    
-                            
-                            
-                            
-                            
-                    
-                
-                           
 
-      
-        
-              
+
+
+
+
+
+                for (i = 0; i < container.length; i++);//loop through containers so email is applied to each one
+                let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; // text content and format
+
+
+                chosen = document.querySelector(".container");
+                let textSelected = `<div class="selected-image" id ="${i}" >${text} </div></div>`;//email html
+                let photoSelected = `<div class="selected-image" id ="${i}" > ${photo}</div></div>`;//image html
+
+                if (!box.includes(textSelected)) //check if display already shows email
+                {
+                    chosen.insertAdjacentHTML("beforeend", textSelected); //displays email
+                    chosen.insertAdjacentHTML("beforeend", photoSelected);//displays image 
+                }
+                if (box.includes(photoSelected)) {
+                    alert("Image already stored")
+                    chosen = document.querySelector(".design");
+                }
+
+
+                if (box.includes(textSelected)) {
+                    chosen.insertAdjacentHTML("beforeend", photoSelected);
+                }
+
+
+
+
+
+
+                box.unshift(textSelected)//put email display into box
+                box.unshift(photoSelected)//put image into box 
+                //container.unshift(box)//moves containers into box 
+            }
         }
+
+        else
+        {
+            $("#email").css({"border": "3px solid red"})
+            {
+              alert("Please enter valid email address")
+          
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 })        
