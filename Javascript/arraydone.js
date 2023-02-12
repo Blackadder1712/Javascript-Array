@@ -147,6 +147,7 @@ $("#send").click(function()
                 console.log(inbox)
                 console.log(inbox[0])
                 
+                
                
                     /*let chosen=document.querySelector(".selected-image"); //where image goes
                     let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; // text content and format
@@ -208,10 +209,10 @@ $("#send").click(function()
                             
                                                         
                                 console.log(container)
-                                box.unshift(textSelected)
-                                box.unshift(photoSelected)
-                        
-                                console.log(container)
+                                box.unshift(textSelected)//put email display into box
+                                box.unshift(photoSelected)//put image into box 
+                                //container.unshift(box)//moves containers into box 
+                                //console.log(container)
                                 console.log(box)
                        
                            
