@@ -144,11 +144,11 @@ $("#send").click(function()
                 address.unshift(x)
                 email.unshift(address) // move user input into email array
             
-                console.log(address)
+          
                 for (let i = 1; i <= address.length; i++)
                 if(address[0] === address[i])
                 {
-                    console.log(address)
+                 
               
                    
                  
@@ -162,49 +162,20 @@ $("#send").click(function()
                    address.shift()
 
                    
-                    console.log(address)                
+                         
                 }
-                console.log(email)
+  
                 inbox.unshift(email)// move list off emails into a larger array
                 photo = imageList[0] // put picked image into a variable 
                 email.unshift(photo) // put chosen photo into email
-                console.log(inbox)
-                console.log(inbox[0])
+            
                 
                 
-               
-                    /*let chosen=document.querySelector(".selected-image"); //where image goes
-                    let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; // text content and format
-                    for(i = 0; i < container.length; i++);//loop through containers so email is applied to each one
-                   let textSelected = `<div class=container id= "${i}"><div class="selected-image" id ="${i}" >${text}  ${photo}</div></div>`;//email html
-                    box.unshift(textSelected) ;// holds all the boxes that contain each set of htmls
-                    console.log(box)
-                
-                   console.log(box)
-                    container.unshift(box)
-             
-                    console.log(box)
-                    chosen.insertAdjacentHTML("beforeend", textSelected);
-                    console.log(container)
-                   for(i = 0; i < container.length; i++);//loop through containers so image is applied
-                   */
-
-
 
                                 
                           
                             
-                            
-                             //inbox[i].unshift(photo)  //photo goes into duplicate email instead of creating another element
-                             console.log(box)
-                   
-                            
-                         
-                                                       
-                             //console.log(container)
-                  
-                        
-                                    console.log(box)
+                     
                                     for(i = 0; i < container.length; i++);//loop through containers so email is applied to each one
                                     let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; // text content and format
                                  
@@ -220,9 +191,10 @@ $("#send").click(function()
                                     }
                                     if(box.includes(photoSelected))
                                     {
+                                        alert("Image already stored" )
                                         chosen=document.querySelector(".design");
                                     }
-                                    console.log(box)
+                                   
 
                                     if(box.includes(textSelected))
                                     {
@@ -232,13 +204,12 @@ $("#send").click(function()
                               
                             
                                                         
-                                console.log(container)
+                               
                                
                                 box.unshift(textSelected)//put email display into box
                                 box.unshift(photoSelected)//put image into box 
                                 //container.unshift(box)//moves containers into box 
-                                //console.log(container)
-                                console.log(box)
+                            
                        
                            
                            
