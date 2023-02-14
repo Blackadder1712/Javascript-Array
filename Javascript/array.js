@@ -110,9 +110,10 @@ function SearchPhotos() {
                                 duplicate = emailList[i][1]// put duplicated email into a variable 
                                 emailList[0]//delete email copy
                                 emailList.unshift(duplicate)//move duplicated to top of array
-                                alert("copy")
+                               
                                 
                                 chosen.removeChild(chosen.lastElementChild)
+                                break
                                
                            }
 
