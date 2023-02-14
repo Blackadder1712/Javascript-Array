@@ -117,7 +117,23 @@ function SearchPhotos() {
                                 break
                                
                            }
-
+                           box.unshift(container)      
+                           if(box[0] === box[i])
+                           {
+                               chosen.removeChild(chosen.lastElementChild)
+                               box.pop()
+                         
+                              
+                           }
+                            
+                          /* for( i = 1; i < box.length; i++)
+                           if(box[0]=== box[i])
+                           {
+                            alert("image stored please select new image ")
+                            document.getElementById("send").style.display = "none";
+                            chosen.removeChild(chosen.lastElementChild)
+                           
+                           }*/
 
 
                             
@@ -128,19 +144,14 @@ function SearchPhotos() {
 
                              
 
-                             console.log(emailList)
+                             console.log(box)
 
 
 
                            
                             let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; //email html
-                      
-                            box.unshift(container)      
-                            if(box[0] === box[i])
-                            {
-                                chosen.removeChild(chosen.lastElementChild)
-                                box.pop()
-                            }
+                            
+                    
                            
                             for(i = 0; i < box.length; i++)
                             textSelected = `<div class="container" id ="${i}" >${text} </div></div>`;//container for each email
@@ -151,6 +162,16 @@ function SearchPhotos() {
                        
 
                             chosen.insertAdjacentHTML("beforeend", textSelected); //displays email
+                            for(i = 0; i < box.length; i++)
+                            chosenTwo = document.getElementById(`${i}`);//where photos go
+
+                            photo = imageList[0] //image variable;
+
+                            photoSelected = `${photo}` // holding the photo
+
+                            chosenTwo.insertAdjacentHTML("beforeend", photoSelected); //displays photo
+
+                            
 
 
                             /*chosen2 = document.getElementById(`${i}`);//where containers go
