@@ -116,6 +116,13 @@ $("#send").click(function () {
                 x = document.getElementById("email").value; //put user input into a variable
                 address.unshift(x)
                 email.unshift(address) // move user input into email array
+                for(i = 1; i < email.length;i++)
+                if(email[0]===email[i])
+                {
+                    email[i].unshift(copy);
+                    imageList[0].unshift(copy);
+                    email.shift()
+                }
 
                  /* for (let i = 1; i <= address.length; i++)
                     if (address[0] === address[i]) {
@@ -152,9 +159,11 @@ $("#send").click(function () {
                         chosen = document.querySelector(".design")
                          console.log("hello")
                          console.log(address)
-                        address.shift()
+                          address.shift()
                         console.log(address)
+                       
                     }
+                
                   
 
                     
@@ -169,11 +178,13 @@ $("#send").click(function () {
                     chosenTwo = document.getElementById(`${i}`) //put photo in container
                     let photoSelected = `${photo}`;//image html
                     lorry.unshift(container)
+                    console.log(address)
+                    console.log(lorry)
                     if (lorry[0].includes(photo)) {
                         alert("Image already stored")
                         chosenTwo = document.querySelector(".design");
-                       textSelected.removeChild(textSelected.firstElementChild)
-                        
+                      
+                   
                     }
 
                 
