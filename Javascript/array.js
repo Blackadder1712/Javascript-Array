@@ -74,6 +74,7 @@ function SearchPhotos() {
 
     emailList = [] // list of emails 
     container = [] // array of email htmls 
+    box = [] //array of containers 
 
     $("#send").click(function () {
         if (imageList.length < 1) {
@@ -134,10 +135,10 @@ function SearchPhotos() {
                            
                             let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; //email html
                       
-                       
+                            box.unshift(container)      
                            
                            
-                            for(i = 0; i < emailList.length; i++)
+                            for(i = 0; i < box.length; i++)
                             textSelected = `<div class="container" id ="${i}" >${text} </div></div>`;//container for each email
                             container.unshift(textSelected)//put html into array
                            
