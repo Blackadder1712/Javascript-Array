@@ -113,7 +113,7 @@ function SearchPhotos() {
                                 emailList.unshift(duplicate)//move duplicated to top of array
                                
                                 
-                                chosen.removeChild(chosen.lastElementChild)
+                               
                                 break
                                
                            }
@@ -136,7 +136,11 @@ function SearchPhotos() {
                             let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; //email html
                       
                             box.unshift(container)      
-                           
+                            if(box[0] === box[i])
+                            {
+                                chosen.removeChild(chosen.lastElementChild)
+                                box.pop()
+                            }
                            
                             for(i = 0; i < box.length; i++)
                             textSelected = `<div class="container" id ="${i}" >${text} </div></div>`;//container for each email
