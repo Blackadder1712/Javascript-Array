@@ -81,7 +81,7 @@ let emailRegex = '^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+
 inbox = []
 lorry= [] // holds containers
 container = [] // hold all the boxes 
-copy = []
+copy = [] // holds copied emails
 box = [] //holds the htmls of the emails/images to show on screen
 address = []
 emailHtml = []
@@ -119,10 +119,14 @@ $("#send").click(function () {
                 for(i = 1; i < email.length;i++)
                 if(email[0]===email[i])
                 {
-                    email[i].unshift(copy);
-                    imageList[0].unshift(copy);
-                    email.shift()
+                   copy.unshift( email[i]); // email gets moved to seperate array
+                   duplicate = email[i] //variable for copied email
+                  duplicate.unshift( imageList[0]);// image gets added 
+                    email.shift()// remove duplicate from original email array
                 }
+
+               email.unshift( imageList[0]) // if not duplicate just add image 
+
 
                  /* for (let i = 1; i <= address.length; i++)
                     if (address[0] === address[i]) {
