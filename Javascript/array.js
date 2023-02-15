@@ -71,11 +71,10 @@ function SearchPhotos() {
     let emailInput = document.getElementById('email');
 
     let emailRegex = '^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$';
-
-    emailList = [] // list of emails 
-    container = [] // array of email htmls 
-    box = [] //array of containers 
-
+    
+    lorry= [] // this stores every box that containe htmls
+    
+    emails= []// list of emails 
     $("#send").click(function () {
         if (imageList.length < 1) {
             alert("Please select an image ")
@@ -88,105 +87,60 @@ function SearchPhotos() {
                 {
                     $("#email").css({"border": "3px solid #7FFF94"})
                     {
-        
-        
-            
-                        email= [] // holding input and images, new array made with each button click
-                         
+                      
+
+                        box = []
                         
-                        //put input into a variable
-                            x = document.getElementById("email").value; 
-                        
-                        //put variable into email array
-                            email.unshift(x) 
-                         //put image into email array   
-                            email .unshift(imageList[0])
-                            console.log(email)
-                            emailList.unshift(email)// email array moved to top of email list array
-                            console.log(emailList[0][1])
-                            // make a container to display on screen if its not a duplicate
-                            for(i = 1; i < emailList.length;i++)
-                            if(emailList[0][1] === emailList[i][1])
-                            {
-                                duplicate = emailList[i][1]// put duplicated email into a variable 
-                                emailList[0]//delete email copy
-                                emailList.unshift(duplicate)//move duplicated to top of array
-                               
-                                
-                               
-                                break
-                               
-                           }
-                           box.unshift(container)      
-                           if(box[0] === box[i])
-                           {
-                               chosen.removeChild(chosen.lastElementChild)
-                               box.pop()
-                         
-                              
-                           }
-                            
-                          /* for( i = 1; i < box.length; i++)
-                           if(box[0]=== box[i])
-                           {
-                            alert("image stored please select new image ")
-                            document.getElementById("send").style.display = "none";
-                            chosen.removeChild(chosen.lastElementChild)
-                           
-                           }*/
-
-
-                            
-                            
-                            chosen = document.querySelector(".selected-image");//where containers go
-                            
-                        
-
-                             
-
-                             console.log(box)
-
-
-
-                           
-                            let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; //email html
-                            
+                   
                     
-                           
-                            for(i = 0; i < box.length; i++)
-                            textSelected = `<div class="container" id ="${i}" >${text} </div></div>`;//container for each email
-                            container.unshift(textSelected)//put html into array
-                           
-                            console.log(container)
-                            //check if array is being duplicated
-                       
+                        x = document.getElementById("email").value; //user input
+                            //check if a box already has email in it 
+                     
+                     
 
-                            chosen.insertAdjacentHTML("beforeend", textSelected); //displays email
-                            for(i = 0; i < box.length; i++)
-                            chosenTwo = document.getElementById(`${i}`);//where photos go
+                    
+                        //create html to hold containers
+                        chosen = document.querySelector(".selected-image");
+                        //create container with email as id a
+                        container = `<div class="container" id ="${x}" > </div>`;//container for each email
+                        
+                        
+                        chosen.insertAdjacentHTML("beforeend", container); //displays container
 
-                            photo = imageList[0] //image variable;
+                        //move container into a parent, one email per box
+                        
+                        box.unshift(container)
+                        console.log(box)
 
-                            photoSelected = `${photo}` // holding the photo
+                        //move each box into the lorry
 
-                            chosenTwo.insertAdjacentHTML("beforeend", photoSelected); //displays photo
+                        lorry.unshift(box)
+                        console.log(lorry)
 
-                            
+                        //now add email into container
+                        
+                         chosenEmail = document.getElementById(`${x}`);// where emails need to be displayed
+                         text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; //email format
+                
+                              
+                        chosenEmail.insertAdjacentHTML("beforeend", text); //displays container
+                        email = `${text}`// email to be inserted into html
+                 
+
+                        console.log(lorry)
 
 
-                            /*chosen2 = document.getElementById(`${i}`);//where containers go
-                            photo = imageList[0]
-                            let photoSelected = `<div class="selected-image" > ${photo}</div></div>`;//image html
-                            
-                            chosen2.insertAdjacentHTML("beforeend", photoSelected); //displays image
-                            
 
-                            //check if email is a duplicate 
-                            console.log(emailList)
 
-                              //stop a duplicate email container 
-                              */
+                        
+
                           
+                      
+
+                        
+
+            
+                       // email.unshift(imageList[0]) // put imag in email array on button click
                         
 
                     }              
