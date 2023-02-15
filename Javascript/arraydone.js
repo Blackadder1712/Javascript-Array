@@ -148,7 +148,7 @@ $("#send").click(function () {
 
                   
 
-                    
+                    console.log(email)
                     console.log(address)
                 
                     let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; //email html
