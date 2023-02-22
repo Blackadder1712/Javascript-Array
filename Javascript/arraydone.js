@@ -78,23 +78,13 @@ let emailInput = document.getElementById('email');
 
 let emailRegex = '^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$';
 
-inbox = []
-lorry= [] // holds containers
-container = [] // hold all the boxes 
-copy = [] // holds copied emails
-box = [] //holds the htmls of the emails/images to show on screen
-address = []
-emailHtml = []
-function emailCopy() {//if there is a duplicate the image will go to its already established container            
-    for (i = 0; i < copy.length; i++)
+photobox = [] // array of images 
 
-        chosen = document.getElementById(`${i}`)
+collection = [] // holds all the objects 
 
+emails = []
 
-
-}
-
-
+box = []
 
 
 
@@ -111,23 +101,67 @@ $("#send").click(function () {
             $("#email").css({"border": "3px solid #7FFF94"})
             {
 
-
-                email = [] // list of email data
-                x = document.getElementById("email").value; //put user input into a variable
-                address.unshift(x)
-                email.unshift(address) // move user input into email array
-                for(i = 1; i < email.length;i++)
-                if(email[0]===email[i])
+                address = document.getElementById("email").value //email input
+                //object holding the emails and photos
+                inbox =
                 {
-                   copy.unshift( email[i]); // email gets moved to seperate array
-                   duplicate = email[i] //variable for copied email
-                  duplicate.unshift( imageList[0]);// image gets added 
-                    email.shift()// remove duplicate from original email array
+                "email": address,
+                "images" : photobox //array holding all the images 
+
                 }
+       
 
-               email.unshift( imageList[0]) // if not duplicate just add image 
 
 
+                 photo = imageList[0] //image variable
+                 photobox.unshift(photo) //put image into an array
+                 collection.unshift(inbox)//put object into array
+
+                console.log(inbox)
+
+         
+
+                    //compare emails 
+
+                    console.log(collection)
+
+                    let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; //email html
+                    
+                    let items = "";
+                
+                    {
+                      items +=`<div class="container" id ="${address}" >${text} </div></div>`
+                    }
+                    console.log(items)
+                    
+             
+       
+                    console.log(box)
+                    let chosen=document.querySelector(".selected-image"); // where items will go
+              
+                       //display on screen
+                    chosen.insertAdjacentHTML("beforeend", items);
+          
+
+                
+
+              
+
+
+
+                
+                  console.log(collection)
+                   
+           
+                                  
+                   //array holding the htmls 
+                
+                 /* chosen = document.querySelector(".selected-image");//where containers go
+                  for (i = 0; i <address.length; i++);//loop through containers so email is applied to each one
+                  let textSelected = `<div class="container" id ="${address}" >${text} </div></div>`;//container for each email
+                  chosen.insertAdjacentHTML("beforeend", textSelected); //displays email
+                  box.unshift(textSelected) //move email html into html array
+                  console.log(box)
                  /* for (let i = 1; i <= address.length; i++)
                     if (address[0] === address[i]) {
 
@@ -148,15 +182,11 @@ $("#send").click(function () {
 
                   
 
-                    console.log(email)
-                    console.log(address)
+                 
                 
-                    let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; //email html
-                    chosen = document.querySelector(".selected-image");//where containers go
-                
-                        for (i = 0; i <address.length; i++);//loop through containers so email is applied to each one
-                    let textSelected = `<div class="container" id ="${i}" >${text} </div></div>`;//container for each email
-                   emailHtml.unshift(textSelected)
+                       // for (i = 0; i <address.length; i++);//loop through containers so email is applied to each one
+                  
+                   /*emailHtml.unshift(textSelected)
                     for(i = 1; i < address.length; i ++)
                     if(address[0]===address[i] )
                     {
@@ -174,7 +204,7 @@ $("#send").click(function () {
                     for(i = 0; i < address.length; i++)
                     
                
-                    chosen.insertAdjacentHTML("beforeend", textSelected); //displays email
+                 
                     inbox.unshift(email)// move list off emails into a larger array
                    
                    
