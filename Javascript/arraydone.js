@@ -86,6 +86,8 @@ emails = []
 
 box = []
 
+list = []
+
 
 
 $("#send").click(function () {
@@ -109,17 +111,24 @@ $("#send").click(function () {
                 "images" : photobox //array holding all the images 
 
                 }
-       
-
+          
+                 
+                 
 
 
                  photo = imageList[0] //image variable
                  photobox.unshift(photo) //put image into an array
                  collection.unshift(inbox)//put object into array
+                  for(i = 0; i < collection.length; i++)
+                  if(collection[0].email.includes(address))
+                  {
+                    console.log("yo")
+                  
+                  }
+              
+                      console.log(inbox)
 
-                console.log(inbox)
-
-         
+          
 
                     //compare emails 
 
@@ -130,18 +139,42 @@ $("#send").click(function () {
                     let items = "";
                 
                     {
-                      items +=`<div class="container" id ="${address}" >${text} </div></div>`
+                      items =`<div class="container" id ="${address}" >${text} </div></div>`
                     }
                     console.log(items)
+
+                    
+                    let chosen=document.querySelector(".selected-image");
+
+                    chosen.insertAdjacentHTML("beforeend", items);
+               
+               
+                    
+               
+                  
+                      
+                    let chosentwo = document.getElementById(`${address}`); // where items will go
+
+                  
+                    photo = imageList[0]
+                 
+                    chosentwo.insertAdjacentHTML("beforeend", photo);
+
+                    list.unshift(items)
+               
+                 
+
+                    console.log("yes")
+                    console.log(box)
+                
+                       //display on screen
+         
+
+            
                     
              
        
-                    console.log(box)
-                    let chosen=document.querySelector(".selected-image"); // where items will go
-              
-                       //display on screen
-                    chosen.insertAdjacentHTML("beforeend", items);
-          
+                 
 
                 
 
