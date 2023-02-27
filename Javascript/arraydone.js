@@ -146,6 +146,8 @@ $("#send").click(function () {
                         {
                             alert("Image already saved");
                             photobox.shift();
+                            
+                            let chosentwo  = document.getElementById(`${address}`); // where image will go
                             chosentwo.removeChild(chosentwo.lastElementChild)
                         }
 
