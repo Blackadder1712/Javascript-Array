@@ -142,9 +142,9 @@ $("#send").click(function () {
                         chosen.removeChild(chosen.lastElementChild) // delete latest html
                         collection.shift() // remove duplicate email 
                         for(i= 1; i < photobox.length; i++)
-                        if(photobox[0]===photobox[i])
+                        if(photobox[0]===photobox[i])//remove and alert duplicate email
                         {
-                            alert("Email already saved");
+                            alert("Image already saved");
                             photobox.shift();
                             chosentwo.removeChild(chosentwo.lastElementChild)
                         }
