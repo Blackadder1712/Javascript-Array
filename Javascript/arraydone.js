@@ -141,6 +141,13 @@ $("#send").click(function () {
                     if (collection[0].email === collection[i].email) {
                         chosen.removeChild(chosen.lastElementChild) // delete latest html
                         collection.shift() // remove duplicate email 
+                        for(i= 1; i < photobox.length; i++)
+                        if(photobox[0]===photobox[i])
+                        {
+                            alert("Email already saved");
+                            photobox.shift();
+                            chosentwo.removeChild(chosentwo.lastElementChild)
+                        }
 
                   
                     
@@ -163,6 +170,7 @@ $("#send").click(function () {
 
                 console.log(chosentwo)
                 
+                typeof(chosentwo)
                 
          
                  
@@ -170,6 +178,10 @@ $("#send").click(function () {
 
                 console.log("yes")
 
+                
+         
+               
+                
                 //for (var i = 0; i<collection.length; i++) {
                     // use i as an array index
             
