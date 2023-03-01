@@ -88,6 +88,8 @@ box = []
 
 list = []
 
+duplicate = []
+
 
 $("#send").click(function () {
     if (imageList.length < 1) {
@@ -141,15 +143,18 @@ $("#send").click(function () {
                     if (collection[0].email === collection[i].email) {
                         chosen.removeChild(chosen.lastElementChild) // delete latest html
                         collection.shift() // remove duplicate email 
-                        for(i= 1; i < photobox.length; i++)
-                        if(photobox[0]===photobox[i])//remove and alert duplicate email
-                        {
-                            alert("Image already saved");
-                            photobox.shift();
-                            
-                            let chosentwo  = document.getElementById(`${address}`); // where image will go
-                            chosentwo.removeChild(chosentwo.lastElementChild)
-                        }
+                           for(i=1;i < photobox.length;i++)
+                           if(collection[0].images[0]=== collection[0].images[i])
+                           {
+                            duplicate = collection[0].images[0]
+                            duplicate = duplicate.toString();
+                            return duplicate.replace( /(<([^>]+)>)/ig, '');
+                        
+                             
+                           }
+                           
+                          
+                        
 
                   
                     
