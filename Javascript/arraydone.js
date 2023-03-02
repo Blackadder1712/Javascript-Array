@@ -141,19 +141,24 @@ $("#send").click(function () {
 
                 for (i = 1; i < collection.length; i++) //dont add another container if email the same 
                     if (collection[0].email === collection[i].email) {
+                       // copy = collection[i].email
+                       // collection.unshift(copy)
                         chosen.removeChild(chosen.lastElementChild) // delete latest html
                         collection.shift() // remove duplicate email 
                            for(i=1;i < photobox.length;i++)
                            if(collection[0].images[0]=== collection[0].images[i])
                            {
-                            duplicate = collection[0].images[0]
+                            duplicate = collection[0].images[0];
                             duplicate = duplicate.toString();
-                            return duplicate.replace( /(<([^>]+)>)/ig, '');
+                             
+                             return duplicate.replace( /(<([^>]+)>)/ig, '');
+                        
+                           
                         
                              
                            }
                            
-                          
+                           photobox.shift()
                         
 
                   
