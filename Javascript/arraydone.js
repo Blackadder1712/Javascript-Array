@@ -90,6 +90,7 @@ list = []
 
 duplicate = []
 
+copy = []
 
 $("#send").click(function () {
     if (imageList.length < 1) {
@@ -148,22 +149,30 @@ $("#send").click(function () {
                            for(i=1;i < photobox.length;i++)
                            if(collection[0].images[0]=== collection[0].images[i])
                            {
+                            
+                            
                             duplicate = collection[0].images[0];
                             duplicate = duplicate.toString();
-                             
+                      
                              return duplicate.replace( /(<([^>]+)>)/ig, '');
-                        
-                           
-                        
+                            
+                            
+                            
                              
                            }
+                 
+
+                            
+                         
                            
-                           photobox.shift()
-                        
+                           console.log(collection)
+                           
 
                   
                     
                     }
+
+                  
 
                 
 
