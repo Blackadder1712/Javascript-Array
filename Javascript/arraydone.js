@@ -78,19 +78,17 @@ let emailInput = document.getElementById('email');
 
 let emailRegex = '^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$';
 
-photobox = [] // array of images 
+
 
 collection = [] // holds all the objects 
 
-emails = []
 
-box = []
 
-list = []
+
 
 duplicate = []
 
-copy = []
+
 
 $("#send").click(function () {
     if (imageList.length < 1) {
@@ -108,23 +106,112 @@ $("#send").click(function () {
                 //object holding the emails and photos
                 inbox =
                 {
-                    "email": address,
-                    "images": photobox //array holding all the images 
+                     email: address,
+                     images: [] //array holding all the images 
 
                 }
 
+              
 
 
 
+                   collection.unshift(inbox)//put object into array
+
+                         
+
+                    let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; //email html
+
+                    let items = ""; // generate html
+
+                    {
+                        items = `<div class="container" id ="${address}" >${text} </div></div>` //html variable
+                    }
+                    console.log(items)
+
+                    let chosen = document.querySelector(".selected-image"); //where to display container 
+
+                    chosen.insertAdjacentHTML("beforeend", items);
 
                 photo = imageList[0] //image variable
-                photobox.unshift(photo) //put image into an array
-             
-               
-                collection.unshift(inbox)//put object into array
-     
+                inbox.images.unshift(photo) //put image into an array
 
-           
+                console.log(collection)
+
+                
+                for (i = 1; i < collection.length; i++) //dont add another container if email the same 
+                    if (collection[0].email === collection[i].email) 
+                    {
+                        collection.shift() // delete duplicate
+                        collection.splice(i, 1) //move i to top of array to recieve image
+                      collection[0].images.unshift(photo) //add image to selected email
+                      
+                    
+                    
+                   
+
+                      chosen.removeChild(chosen.lastElementChild) // delete latest html
+                      
+                  
+ 
+                      console.log(collection)
+
+                      
+                   
+
+                 
+
+                 
+
+   
+                      
+              
+
+          
+                          
+                           
+                          
+                          
+                           
+                    }
+                    
+             
+                    for(i = 1; i < collection[0].images.length; i++ )
+                    if(collection[0].images[0]=== collection[0].images[i])
+                         {
+                          
+                          duplicate = collection[0].images[i];//duplicate variable 
+                          duplicate = duplicate.toString(); //turn into string 
+
+                          
+                    
+                          return duplicate.replace( /(<([^>]+)>)/ig, '');//remove tags 
+
+
+                          
+                 
+                         
+                          }
+              
+               
+                    
+
+                   
+
+
+                
+
+                       let chosentwo  = document.getElementById(`${address}`); // where image will go
+             
+                       photo = imageList[0]
+
+                       chosentwo.insertAdjacentHTML("beforeend", photo);
+ 
+             
+                     
+                       
+               
+
+            /*
 
                 let text = document.getElementById("email").value + "<br>" + "<hr>" + "<br>"; //email html
 
@@ -146,24 +233,12 @@ $("#send").click(function () {
                        // collection.unshift(copy)
                         chosen.removeChild(chosen.lastElementChild) // delete latest html
                         collection.shift() // remove duplicate email 
-                           for(i=1;i < photobox.length;i++)
-                           if(collection[0].images[0]=== collection[0].images[i])
-                           {
-                            
-                            
-                            duplicate = collection[0].images[0];
-                            duplicate = duplicate.toString();
                       
-                             return duplicate.replace( /(<([^>]+)>)/ig, '');
-                            
-                            
-                            
-                             
-                           }
+                           /**/
                  
 
                             
-                         
+                         /*
                            
                            console.log(collection)
                            
