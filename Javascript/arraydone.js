@@ -133,7 +133,7 @@ $("#send").click(function () {
                     chosen.insertAdjacentHTML("beforeend", items);
 
                 photo = imageList[0] //image variable
-                inbox.images.unshift(photo) //put image into an array
+               collection[0].images.unshift(photo) //put image into an array
 
                 console.log(collection)
 
@@ -143,9 +143,9 @@ $("#send").click(function () {
                     {
                         collection.shift() // delete duplicate
                         collection.splice(i, 1) //move i to top of array to recieve image
+                        
                       collection[0].images.unshift(photo) //add image to selected email
-                      
-                    
+                  
                     
                    
 
@@ -182,15 +182,19 @@ $("#send").click(function () {
                           duplicate = collection[0].images[i];//duplicate variable 
                           duplicate = duplicate.toString(); //turn into string 
 
+                  
                           
-                    
+                        
+                          console.log(collection)
+                          
                           return duplicate.replace( /(<([^>]+)>)/ig, '');//remove tags 
-
-
-                          
+                            
+                        
                  
                          
                           }
+
+                   
               
                
                     
