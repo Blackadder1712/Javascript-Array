@@ -1,102 +1,63 @@
 
-//regex variables 
+const image = document.querySelector(".image");
 const emailInput = document.getElementById('email');
+const sendButton = document.getElementById('send');
+const containerDiv = document.querySelector(".selected-image");
 
 const emailRegex = '^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$';
-const sendButton = document.getElementById('send');//global button
-const image = document.querySelector(".image"); //
 
-const currentDiv = document.querySelector("#first");//where to put image 
+let data = null;      //store the data of the pictures
+let currentEmail = null; //store the current email
+let imageList = [];  //store image ids 
+let emailList = [];   //store emails
+let collection = [];  //store the emails and selected images together
 
-let data = null;
-let imageList = []; //array of images 
-
-let collection = [] ;// holds all the objects 
- let emailList = []; // array of emails 
-
- 
-
-
-// when you click the "new image " button
 function SearchPhotos() {
-
- 
-
-        const index = Math.floor(Math.random() * data.length) + 0;
-        let randomImg = data[index].download_url;//random image in variable 
-       
-        let imgId = data[index].id;
+        let index = Math.floor(Math.random() * data.length) + 0; //select rando image
+        image.setAttribute('src', "https://picsum.photos/id/" + data[index].id + "/200"); //set image properties
+        image.setAttribute('alt', data[index].id);
+}
+sendButton.addEventListener('click', function (){
         
-        image.setAttribute('src', randomImg); //set as source in image div
-        image.setAttribute('alt', imgId); //set as source in image div
-       
-
-     }
-
-
-     sendButton.addEventListener("click", function() //on click of button
-     {
-
-        if
-        (emailInput.value.match(emailRegex)) //if email is valid
-        {
-            if(emailList.includes(emailInput.value)) //check if already in email list
-            {
-                
-            }
-            else
-            {
-                emailList.push(emailInput);//put email in email list 
-                                
-                let image_prime = image.cloneNode();//clone of image to display on screen
-                currentDiv.append(image_prime);
-                console.log(image)
-                imageList.unshift(image);
-     
-                console.log(imageList)
-
-            
-               
-                SearchPhotos();
-                
-
+    if(emailInput.value.match(emailRegex)){   //if email passes regex
+        if(!emailList.includes(emailInput.value)){ //check if its not a duplicate 
+            emailList.push(emailInput.value);       //add it if it isnt 
+            currentEmail = emailInput.value;      //and set it as currently in use
+        }
+        
+        if(currentEmail != emailInput.value && currentEmail != ""){ //if the latest email is not the same as the input value, new email was entered
+            collection[currentEmail] = imageList;  //save the current email and its nested imageList into the collection
+            currentEmail = emailInput.value;    //then replace the currentemail with the input value
+            if(collection[currentEmail]){  //if the new email is already in the collection, fetch it
+                imageList = collection[currentEmail]; // the needed imagelist is the one within the currrent email
+            } else{                                                                      
+                imageList = []; // if new email create new imagelist
             }
         }
-        else {
-            
-                emailInput.style.border="3px solid red";
-                alert("Invalid Email, Please re-enter");//if email not correct format
+let img = image.cloneNode();  //copy the random image
+        
+        if(!imageList.includes(image.getAttribute('alt'))){ //if image is not a duplicate 
+            containerDiv.append(img);   //add it to the div
+            imageList.push(image.getAttribute('alt'));  //and add it to the list array
+        } else alert("Image was already added");  //if its already in the list, show an error
 
-            }
-
-           
-
-     })
-
-
-
-    function requestImage()
-    {
-       let request = new XMLHttpRequest();
-
-       //create request
-   
-       request.open('GET', 'https://picsum.photos/v2/list?page=2&limit=100')
-   
-       //send request
-   
-       request.send();
-   
-                  
-       request.addEventListener("load", function () {
-            data = JSON.parse(request.responseText);
-           SearchPhotos(); //call first photo
-    
-    });
-
-   
+        console.log(collection)
+        
+    } else {        
+        emailInput.style.border = "3px solid red";
+        alert("Please enter valid email");
     }
+    
+    SearchPhotos();
+});
+function loadImages(){
+    let request = new XMLHttpRequest();
+    request.open('GET', 'https://picsum.photos/v2/list?page=2&limit=100');
+    request.send();
+    request.addEventListener("load", function () {
+        data = JSON.parse(request.responseText);
+        SearchPhotos();
+    });
+}
 
-    requestImage();
-
-      
+loadImages(); 
