@@ -12,6 +12,7 @@ let imageList = [];  //store image ids
 let emailList = [];   //store emails
 let collection = [];  //store the emails and selected images together
 
+
 function SearchPhotos() {
         let index = Math.floor(Math.random() * data.length) + 0; //select rando image
         image.setAttribute('src', "https://picsum.photos/id/" + data[index].id + "/200"); //set image properties
@@ -23,11 +24,18 @@ sendButton.addEventListener('click', function (){
         if(!emailList.includes(emailInput.value)){ //check if its not a duplicate 
             emailList.push(emailInput.value);       //add it if it isnt 
             currentEmail = emailInput.value;      //and set it as currently in use
+            post = currentEmail
+            containerDiv.append(post);   //add it to the div
         }
-        
-        if(currentEmail != emailInput.value && currentEmail != ""){ //if the latest email is not the same as the input value, new email was entered
+        console.log(currentEmail);
+      
+      
+        if(currentEmail != emailInput.value && currentEmail != "")
+        { //if the latest email is not the same as the input value, new email was entered
+           
+         
             collection[currentEmail] = imageList;  //save the current email and its nested imageList into the collection
-            currentEmail = emailInput.value;    //then replace the currentemail with the input value
+                //then replace the currentemail with the input value
             if(collection[currentEmail]){  //if the new email is already in the collection, fetch it
                 imageList = collection[currentEmail]; // the needed imagelist is the one within the currrent email
             } else{                                                                      
@@ -35,13 +43,14 @@ sendButton.addEventListener('click', function (){
             }
         }
 let img = image.cloneNode();  //copy the random image
+
         
         if(!imageList.includes(image.getAttribute('alt'))){ //if image is not a duplicate 
             containerDiv.append(img);   //add it to the div
             imageList.push(image.getAttribute('alt'));  //and add it to the list array
         } else alert("Image was already added");  //if its already in the list, show an error
 
-        console.log(collection)
+       
         
     } else {        
         emailInput.style.border = "3px solid red";
