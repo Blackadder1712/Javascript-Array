@@ -37,7 +37,7 @@ sendButton.addEventListener('click', function (){
             containerDiv.insertAdjacentHTML("beforeend", boxDiv);
             console.log(currentEmail);
             box = document.getElementById(`${emailInput.value}`);    
-            imageList = []; // if new email create new imagelist
+           
             
            
         }
