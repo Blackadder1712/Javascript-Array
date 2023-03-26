@@ -5,8 +5,6 @@ const sendButton = document.getElementById('send');
 const containerDiv = document.querySelector(".selected-image");
 
 
-
-
 const emailRegex = '^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$';
 
 let data = null;      //store the data of the pictures
@@ -33,45 +31,70 @@ sendButton.addEventListener('click', function (){
         if(!emailList.includes(emailInput.value)){ //check if its not a duplicate 
             emailList.push(emailInput.value);       //add it if it isnt 
             currentEmail = emailInput.value;      //and set it as currently in use
-            
-          
+
+         
             boxDiv = `<div class="container" id ="${emailInput.value}" > ${currentEmail}</div>`;
             containerDiv.insertAdjacentHTML("beforeend", boxDiv);
+            console.log(currentEmail);
+            box = document.getElementById(`${emailInput.value}`);       
            
         }
-        console.log(currentEmail);
-      
+
+        console.log(imageList)
+    
+   
       
         if(currentEmail != emailInput.value && currentEmail != "")
         { //if the latest email is not the same as the input value, new email was entered
-           
+
+            
+      
          
             collection[currentEmail] = imageList;  //save the current email and its nested imageList into the collection
                 //then replace the currentemail with the input value
             
             if(collection[currentEmail]){  //if the new email is already in the collection, fetch it
                 imageList = collection[currentEmail]; // the needed imagelist is the one within the currrent email
-            } else{                                                                      
+             
+            } else{      
+           
                 imageList = []; // if new email create new imagelist
+         
             }
         }
-           let img = image.cloneNode();  //copy the random image
+        
 
         
         if(!imageList.includes(image.getAttribute('alt'))){ //if image is not a duplicate 
-  
+      
             imageList.push(image.getAttribute('alt'));  //and add it to the list array
-        } else alert("Image was already added");  //if its already in the list, show an error
-
-       
+            
+            let img = image.cloneNode();  //copy the random image;
+            box = document.getElementById(`${emailInput.value}`);
+            box.append(img)
+          
+        } 
+        else
+        {
+        alert("Image was already added");  //if its already in the list, show an error
+        }
+        
         
     } else {        
+
         emailInput.style.border = "3px solid red";
         alert("Please enter valid email");
     }
     
     SearchPhotos();
+
+    console.log(collection)
+   
+
 });
+
+   
+
 
 
 function loadImages(){
@@ -85,3 +108,5 @@ function loadImages(){
 }
 
 loadImages(); 
+
+
