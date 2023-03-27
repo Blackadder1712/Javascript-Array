@@ -29,11 +29,8 @@ sendButton.addEventListener('click', function (){
         
     if(emailInput.value.match(emailRegex)){   //if email passes regex
         if(!emailList.includes(emailInput.value)){ //check if its not a duplicate 
-            emailList.push(emailInput.value);       //add it if it isnt 
-            currentEmail = emailInput.value;      //and set it as currently in use
-
-         
-            boxDiv = `<div class="container" id ="${emailInput.value}" > ${currentEmail}</div>`;
+            emailList.push(emailInput.value);       //add it if it isnt     
+            boxDiv = `<div class="container" id ="${emailInput.value}" > ${emailInput.value}</div>`;
             containerDiv.insertAdjacentHTML("beforeend", boxDiv);
             console.log(currentEmail);
             box = document.getElementById(`${emailInput.value}`);    
