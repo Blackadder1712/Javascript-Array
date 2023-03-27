@@ -54,6 +54,7 @@ sendButton.addEventListener('click', function (){
          
             collection[currentEmail] = imageList;  //save the current email and its nested imageList into the collection
                 //then replace the currentemail with the input value
+            currentEmail = emailInput.value;
             
             if(collection[currentEmail]){  //if the new email is already in the collection, fetch it
                 imageList = collection[currentEmail]; // the needed imagelist is the one within the currrent email
